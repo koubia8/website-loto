@@ -54,6 +54,20 @@
     <div class="main">
       <slot />
     </div>
+    <div class="footer">
+      <h2>SPORT IS LIVE</h2>
+      <p>
+        Sport is live est un site créé en collectant l'API YouTube, et s'il y a
+        une vidéo sur le droit d'auteur, nous la supprimerons. On Air TV
+        restreint la transmission de vidéos qui violent le droit d'auteur dans
+        le cas de la diffusion en direct en temps réel. On Air TV est conforme
+        aux réglementations de la Commission coréenne des normes de
+        communication.
+      </p>
+      <div class="copyrigth">
+        Copyrightⓒ 2018 - 2021 Sport is TV. Tous les droits sont réservés,
+      </div>
+    </div>
   </div>
 </template>
 
@@ -75,6 +89,9 @@ export default {
 <style>
 * {
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.main {
+  margin-bottom: 40px;
 }
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -175,5 +192,26 @@ body {
 }
 .nav ul:nth-child(6) {
   margin-right: 12px;
+}
+.footer {
+  align-self: flex-end;
+  color: #ffffff;
+  width: 100%;
+  height: 172px;
+  padding-top: 12px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 22px;
+}
+.footer p {
+  margin: 0 auto;
+  width: 50%;
+  font-size: 12px;
+  font-weight: 100;
+}
+.footer .copyrigth {
+  margin-top: 22px;
+  margin-bottom: 22px;
+  font-size: 16px;
 }
 </style>

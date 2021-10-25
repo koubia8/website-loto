@@ -1,7 +1,18 @@
 <template>
   <div class="screen-content">
     <div class="screen">
-      <div class="btnplay">
+      <iframe
+        allow="encrypted-media"
+        width="1000"
+        height="580"
+        marginwidth="0"
+        marginheight="0"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="yes"
+        src="http://buffstream.fun/frame.php?place=aHR0cHM6Ly9kYWRkeWxpdmUubWUvbGl2ZXR2L3N0cmVhbS01LnBocA==&width=700&height=480&uniqid=6176c7b65641a"
+      ></iframe>
+      <!--  <div class="btnplay">
         <svg
           width="118"
           height="120"
@@ -54,7 +65,7 @@
             </filter>
           </defs>
         </svg>
-      </div>
+      </div> -->
     </div>
     <div class="categorie">
       <div class="item">

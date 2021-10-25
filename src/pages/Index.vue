@@ -7,7 +7,10 @@
       <Screen />
       <MatchList />
     </div>
-    <div class="sidebar-right">right</div>
+    <div class="sidebar-right">
+      <ClasseWorld />
+      <ClasseMatch />
+    </div>
   </Layout>
 </template>
 
@@ -15,6 +18,8 @@
 import Login from "@/components/Login";
 import Screen from "@/components/Screen";
 import MatchList from "@/components/Match";
+import ClasseWorld from "@/components/Match/ClasseWorld.vue";
+import ClasseMatch from "@/components/Match/ClasseMatch.vue";
 export default {
   metaInfo: {
     title: "Hello, world!",
@@ -23,6 +28,8 @@ export default {
     Login,
     Screen,
     MatchList,
+    ClasseWorld,
+    ClasseMatch,
   },
 };
 </script>
@@ -45,7 +52,10 @@ export default {
 }
 
 .sidebar-right {
-  background-color: beige;
+  padding: 35px 20px 5px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
 }
 .home-content {
   flex-grow: 1;

@@ -17,8 +17,8 @@
     <td class="text-left">{{ date }}</td>
     <td class="text-center">{{ genre }}</td>
     <td>{{ libelle }}</td>
-    <td>
-      <span v-if="time !== undefined">{{ time }}</span>
+    <td class="text-center">
+      <button class="btn-waiting" v-if="time !== undefined">Waiting</button>
       <button v-else class="btn-player">
         Play
         <svg
@@ -110,9 +110,13 @@ export default {
 td {
   color: #ffffff;
   padding: 6px 3px;
+  font-weight: 200;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn-player {
+.btn-player,
+.btn-waiting {
   display: flex;
   align-content: space-between;
   align-items: center;
@@ -121,8 +125,14 @@ td {
   text-align: center;
   border-radius: 10px;
   border: none;
-  background: #c56060;
+
   color: #ffffff;
+}
+.btn-player {
+  background: #c56060;
+}
+.btn-waiting {
+  background-color: #ffb800;
 }
 .btn-player svg {
   margin-left: 12px;
@@ -135,7 +145,7 @@ td {
 .ranking-group .ranking {
   flex-grow: 1;
   background-color: #f2f6ff;
-  padding: 4px;
+  padding: 7px;
   color: #171c29;
   border-radius: 60%;
   margin-right: 6px;
