@@ -26,7 +26,7 @@
         </ul>
       </div>
       <div class="heroe">
-        SPORT IS LIVE
+        <h1>SPORT IS LIVE</h1>
       </div>
       <div class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
@@ -154,11 +154,22 @@ body {
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
-  font-size: 78px;
+
   color: #00ff00;
 
   -webkit-text-stroke: 2px
-    linear-gradient(89.88deg, #ffffff 11.86%, #ffffff 53.48%, #1a2151 86.48%);
+    linear-gradient(89.88deg, #00ff00 11.86%, #00ff00 53.48%, #1a2151 86.48%);
+}
+.heroe h1 {
+  font-size: 78px;
+  background: -webkit-linear-gradient(
+    89.88deg,
+    #ffffff 18.86%,
+    #00ff00 30.48%,
+    #1a2151 86.48%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav {

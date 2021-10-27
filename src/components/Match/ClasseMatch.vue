@@ -2,484 +2,110 @@
   <div class="classe-match">
     <h4>Classement des equipees</h4>
     <hr />
+    <div class="country">
+      <div class="" v-for="(item, index) in country" :key="index">
+        <div class="name " :class="{ 'name-select': item === nameSelect }">
+          <span @click="handleSelectCountry(item)">{{ item }}</span>
+        </div>
+      </div>
+    </div>
     <table>
       <tr>
-        <th>Rang</th>
-        <th>Equipe</th>
-        <th>Jeux</th>
-        <th>Gagner</th>
-        <th>Point</th>
-        <th>Point</th>
-        <th>Point</th>
+        <th>Pos</th>
+        <th>Name</th>
+        <th>J</th>
+        <th>G</th>
+        <th>N</th>
+        <th>P</th>
+        <th>S</th>
+        <th>C</th>
+        <th>GD</th>
       </tr>
-      <tr>
-        <td>20</td>
+      <tr v-for="(item, index) in matchList" :key="index">
+        <td>{{ item.pos }}</td>
         <td>
           <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
+            <span>{{ item.name }}</span>
           </div>
         </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>
-          <div class="name">
-            <img src="@/assets/chelsea.png" /> <span>Fc Chelsea</span>
-          </div>
-        </td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
+
+        <td>{{ item.J }}</td>
+        <td>{{ item.G }}</td>
+        <td>{{ item.N }}</td>
+        <td>{{ item.P }}</td>
+        <td>{{ item.S }}</td>
+        <td>{{ item.C }}</td>
+        <td>{{ item.GD }}</td>
       </tr>
     </table>
   </div>
 </template>
 
 <script>
+import { getAllMatch } from "@/api";
+import axios from "axios";
 import Tr from "./Tr.vue";
 export default {
   components: { Tr },
   name: "ClassementMatch",
+  data() {
+    return {
+      nameSelect: "",
+      matchs: [],
+      country: [],
+      matchList: [],
+    };
+  },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    handleSelectCountry(name) {
+      this.nameSelect = name;
+
+      this.matchs.map((el) => {
+        if (el.name === name) {
+          this.matchList = el.ranks;
+        }
+      });
+      console.log(this.matchList);
+    },
+    getData() {
+      getAllMatch().then((response) => {
+        this.matchs = response.data;
+        let data = response.data;
+        data.map((item) => {
+          this.country.push(item.name);
+        });
+
+        data.map((item) => {
+          this.matchs.push({ name: item.name, ranks: item.ranks });
+        });
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
+.country {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.country .name {
+  margin: 6px;
+  padding: 5px 10px;
+  color: #ffffff;
+  border-radius: 30px;
+  background-color: #171c29;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+.country .name-select {
+  background-color: #e6855a;
+  color: #171c29;
+}
 .classe-match h4 {
   font-weight: normal;
   margin-bottom: 0;
