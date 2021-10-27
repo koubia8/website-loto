@@ -57,9 +57,7 @@ export default {
     };
   },
   mounted() {
-    this.getData().then(() => {
-      this.handleSelectCountry(this.nameSelect);
-    });
+    this.getData();
   },
   methods: {
     handleSelectCountry(name) {

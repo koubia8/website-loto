@@ -1,31 +1,68 @@
 <template>
-  <div class="match">
-    <table>
-      <thead>
-        <th text-center>Type</th>
-        <th class="text-left">Date</th>
-        <th class="text-center">Genre</th>
-        <th class="text-center">Match</th>
-        <th>Play</th>
-        <th>Ranking</th>
-      </thead>
-      <tbody>
-        <ligne
-          v-for="(item, index) in dataMatch"
-          :key="index"
-          :date="item.date"
-          :genre="item.genre"
-          :libelle="item.match"
-          :rankings="item.rankings"
-          :time="item.time"
-        />
-      </tbody>
-    </table>
+  <div>
+    <div class="categorie">
+      <div class="item" v-for="(item, index) in categories" :key="index">
+        <!--  <img src="@/assets/ballon-de-football.png" /> -->
+        <span @click="handleFilter(item)">{{ item }}</span>
+      </div>
+    </div>
+    <h1>Top Matches Today</h1>
+    <div class="match">
+      <table>
+        <thead>
+          <th class="text-center" width="40">종목</th>
+          <th class="text-left" width="40">방송시간</th>
+          <th class="text-center" width="40">리그</th>
+          <th class="text-center">경기명</th>
+          <th>방송상태</th>
+          <th width="20">멀티</th>
+        </thead>
+        <tbody>
+          <ligne
+            v-for="(item, index) in filteredDataTopEvent"
+            :key="index"
+            :date="item.date"
+            :categorie="item.categorie"
+            :libelle="item.libille"
+            :link="item.link"
+            :live="item.live"
+            :localization="item.localization"
+          />
+        </tbody>
+      </table>
+    </div>
+    <h1>All Match</h1>
+    <div class="match">
+      <table>
+        <thead>
+          <th class="text-center" width="40">종목</th>
+          <th class="text-left" width="40">방송시간</th>
+          <th class="text-center" width="40">리그</th>
+          <th class="text-center">경기명</th>
+          <th>방송상태</th>
+          <th width="20">멀티</th>
+        </thead>
+        <tbody>
+          <ligne
+            v-for="(item, index) in filteredDataAllEvent"
+            :key="index"
+            :date="item.date"
+            :categorie="item.categorie"
+            :libelle="item.libille"
+            :link="item.link"
+            :live="item.live"
+            :localization="item.localization"
+          />
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
 import Ligne from "./Tr.vue";
+import { getAllStreams } from "@/api";
+
 export default {
   name: "Match-List",
   components: { Ligne },
@@ -314,7 +351,97 @@ export default {
           rankings: [1, 3, 5],
         },
       ],
+      allEvents: [],
+      topEvents: [],
+      topEvenCurrent: [],
+      allEvenCurrent: [],
+      nameSelect: "",
+      categories: [],
     };
+  },
+  computed: {
+    filteredDataAllEvent: function() {
+      var search_array = this.allEvents,
+        searchString = this.nameSelect;
+
+      if (!searchString) {
+        return search_array;
+      }
+
+      searchString = searchString.trim().toLowerCase();
+
+      search_array = search_array.filter((item) => {
+        if (item.categorie.toLowerCase().indexOf(searchString) !== -1) {
+          return item;
+        }
+      });
+
+      return search_array;
+    },
+    filteredDataTopEvent: function() {
+      var search_array = this.topEvents,
+        searchString = this.nameSelect;
+
+      if (!searchString) {
+        return search_array;
+      }
+
+      searchString = searchString.trim().toLowerCase();
+
+      search_array = search_array.filter((item) => {
+        if (item.categorie.toLowerCase().indexOf(searchString) !== -1) {
+          return item;
+        }
+      });
+
+      return search_array;
+    },
+  },
+  mounted() {
+    this.getStreams();
+  },
+  methods: {
+    async getStreams() {
+      let topEvent = [];
+      await getAllStreams()
+        .then((result) => {
+          let data = result.data;
+          this.categorie = data.map((cat) => {
+            this.categories.push(cat.name);
+            console.log(cat.events.topEvent);
+            // console.log(cat.events.allEvent);
+            cat.events.allEvent.forEach((event) => {
+              event.events.forEach((match) => {
+                this.allEvents.push({
+                  categorie: cat.name,
+                  date: event.schedule,
+                  link: match.link,
+                  live: match.live,
+                  libille: match.name,
+                  localization: match.schedule,
+                });
+              });
+            });
+
+            cat.events.topEvent.topEvents.forEach((match) => {
+              this.topEvents.push({
+                categorie: cat.name,
+                date: match.scheduleDate,
+                link: match.link,
+                live: match.live,
+                libille: match.name,
+                localization: match.schedule,
+              });
+            });
+          });
+          console.log("hello");
+          console.log(this.allEvent);
+        })
+        .catch((err) => {});
+    },
+    handleFilter(item) {
+      this.nameSelect = item;
+    },
   },
 };
 </script>
@@ -324,6 +451,10 @@ export default {
   border: 2px solid rgba(255, 255, 255, 0.2);
 
   margin: 10px 10px;
+}
+
+h1 {
+  color: #ffffff;
 }
 .match table {
   width: 100%;
@@ -350,7 +481,8 @@ thead :nth-child(3) {
   width: 16%;
 }
 .match tbody {
-  background: rgba(255, 255, 255, 0.2);
+  /*background: rgba(255, 255, 255, 0.2);*/
+  background: rgba(255, 255, 255, -0.8);
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
 }

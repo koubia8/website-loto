@@ -56,41 +56,7 @@
         </svg>
       </div> -->
     </div>
-    <div class="categorie">
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-foot.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/balle-de-tennis.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/icon-foot.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/souris-dordinateur.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-      <div class="item">
-        <img src="@/assets/ballon-de-football.png" />
-      </div>
-    </div>
+
     <div class="type-screen">
       <div class="item">
         1 ecran <img src="@/assets/smart-tv-icon.png" alt="" />

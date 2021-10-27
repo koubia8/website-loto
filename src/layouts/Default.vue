@@ -80,10 +80,11 @@ query {
 </static-query>
 <script>
 import HeaderNav from "./Header.vue";
+import Heroe from "./components/Heroe";
 
 export default {
   name: "Layout",
-  components: { HeaderNav },
+  components: { HeaderNav, Heroe },
 };
 </script>
 <style>
@@ -99,7 +100,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  background-color: #212c4f;
+  /*background-color: #212c4f;*/
+  background-color: #141414;
 }
 
 .layout {
@@ -179,7 +181,8 @@ body {
   align-items: center;
   width: 100%;
   min-height: 53px;
-  background-color: #a7dfa7;
+  /*background-color: #a7dfa7;*/
+  background-color: #1a1a1a;
 }
 .nav a {
   font-family: Roboto;

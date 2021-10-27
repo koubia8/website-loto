@@ -15,10 +15,10 @@
       </svg>
     </td>
     <td class="text-left">{{ date }}</td>
-    <td class="text-center">{{ genre }}</td>
+    <td class="text-center">{{ categorie | fuppercaseFirst }}</td>
     <td>{{ libelle }}</td>
     <td class="text-center">
-      <button class="btn-waiting" v-if="time !== undefined">Waiting</button>
+      <button class="btn-waiting" v-if="live === 0">Waiting</button>
       <button v-else class="btn-player">
         Play
         <svg
@@ -81,23 +81,31 @@
         </svg>
       </button>
     </td>
-    <td class="ranking-group">
-      <span class="ranking" v-for="(item, index) in rankings" :key="index">
-        {{ item }}
-      </span>
+    <td>
+      <div class="ranking-group" v-if="true">
+        <span class="ranking" v-for="(item, index) in rankings" :key="index">
+          {{ item }}
+        </span>
+      </div>
+      <div v-else></div>
     </td>
   </tr>
 </template>
 
 <script>
+import { uppercaseFirst } from "@/utils";
 export default {
   name: "Tr",
+  filters: {
+    fuppercaseFirst: uppercaseFirst,
+  },
   props: {
     type: String,
     date: String,
-    genre: String,
+    categorie: String,
     libelle: String,
-    time: [Number, String],
+    link: String,
+    live: [Number, String],
 
     rankings: {
       type: Array,
@@ -125,7 +133,7 @@ td {
   text-align: center;
   border-radius: 10px;
   border: none;
-
+  cursor: pointer;
   color: #ffffff;
 }
 .btn-player {
@@ -141,6 +149,7 @@ td {
   display: flex;
   justify-content: flex-end;
   text-align: center;
+  width: 70px;
 }
 .ranking-group .ranking {
   flex-grow: 1;

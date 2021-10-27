@@ -4,11 +4,12 @@
       <Login />
     </div>
     <div class="home-content">
+      <VirtualSoocer />
       <Screen />
       <MatchList />
     </div>
     <div class="sidebar-right">
-      <ClasseWorld />
+      <!--  <ClasseWorld /> -->
       <ClasseMatch />
     </div>
   </Layout>
@@ -20,6 +21,7 @@ import Screen from "@/components/Screen";
 import MatchList from "@/components/Match";
 import ClasseWorld from "@/components/Match/ClasseWorld.vue";
 import ClasseMatch from "@/components/Match/ClasseMatch.vue";
+import VirtualSoocer from "@/components/VirtualSoocer";
 export default {
   metaInfo: {
     title: "Hello, world!",
@@ -30,6 +32,7 @@ export default {
     MatchList,
     ClasseWorld,
     ClasseMatch,
+    VirtualSoocer,
   },
 };
 </script>
