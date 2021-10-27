@@ -57,7 +57,9 @@ export default {
     };
   },
   mounted() {
-    this.getData();
+    this.getData().then(() => {
+      this.handleSelectCountry(this.nameSelect);
+    });
   },
   methods: {
     handleSelectCountry(name) {
@@ -81,6 +83,8 @@ export default {
         data.map((item) => {
           this.matchs.push({ name: item.name, ranks: item.ranks });
         });
+        this.nameSelect = this.country[0];
+        console.log(this.nameSelect);
       });
     },
   },
