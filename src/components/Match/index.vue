@@ -27,6 +27,7 @@
             :link="item.link"
             :live="item.live"
             :localization="item.localization"
+            @linkValue="handleLinkValue"
           />
         </tbody>
       </table>
@@ -52,6 +53,7 @@
             :link="item.link"
             :live="item.live"
             :localization="item.localization"
+            @linkValue="handleLinkValue"
           />
         </tbody>
       </table>
@@ -442,6 +444,9 @@ export default {
     handleFilter(item) {
       this.nameSelect = item;
     },
+    handleLinkValue(e) {
+      this.$emit("linkValue", e);
+    },
   },
 };
 </script>
@@ -468,7 +473,7 @@ thead {
 .match thead th {
   padding: 12px;
   border-bottom: 1px solid #ffffff;
-  background-color: #171c29;
+  background-color: #333333;
 }
 thead:first-child {
   width: 12%;

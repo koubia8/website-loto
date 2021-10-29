@@ -55,19 +55,37 @@ export default {
 
 <style scoped>
 table {
-  width: 100px;
+  width: 100%;
   color: #ffffff;
   border-collapse: collapse;
 }
-table tr td {
+table tr td > tr {
   text-align: center;
-  border-left: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
+  font-size: 12px;
+
+  border-bottom: 1px dashed #ffffff;
+}
+table tr td > tr > td {
+  border: 1px dashed #ffffff;
+  border-left: none;
+  border-left: none;
+}
+table tr td > tr > td :last-child {
+  border-right: none;
 }
 table tr:last-child > td {
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
 }
+
 table tr:first-child > td {
   border-top: 1px solid #ffffff;
+}
+table tr:first-child > td > tr > td {
+  border-top: none;
+}
+table tr:first-child > td > tr > td {
+  border-bottom: none;
 }
 </style>

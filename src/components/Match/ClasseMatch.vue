@@ -1,6 +1,6 @@
 <template>
   <div class="classe-match">
-    <h4>Classement des equipees</h4>
+    <h4>실시간 전세계에서 몰리는 경기 순위</h4>
     <hr />
     <div class="country">
       <div class="" v-for="(item, index) in country" :key="index">
@@ -68,7 +68,6 @@ export default {
           this.matchList = el.ranks;
         }
       });
-      console.log(this.matchList);
     },
     getData() {
       getAllMatch().then((response) => {
@@ -81,8 +80,8 @@ export default {
         data.map((item) => {
           this.matchs.push({ name: item.name, ranks: item.ranks });
         });
-        this.nameSelect = this.country[0];
-        console.log(this.nameSelect);
+        this.matchList = this.matchs[0].ranks;
+        this.nameSelect = this.matchs[0].name;
       });
     },
   },
@@ -105,7 +104,7 @@ export default {
   cursor: pointer;
 }
 .country .name-select {
-  background-color: #e6855a;
+  background-color: #00ff0057;
   color: #171c29;
 }
 .classe-match h4 {
@@ -113,7 +112,10 @@ export default {
   margin-bottom: 0;
   margin-top: 0;
 }
-
+.classe-match {
+  background-color: #1a1a1a;
+  padding: 6px;
+}
 .classe-match table {
   width: 100%;
   border-collapse: collapse;

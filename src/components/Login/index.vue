@@ -40,17 +40,20 @@ export default {};
 .login {
   display: flex;
   flex-direction: column;
-  padding-bottom: 12px;
+  padding: 12px;
+
   border-bottom: 1px solid #ffffff;
+  background: #1a1a1a;
 }
 .login input {
-  background: rgba(255, 255, 255, 0.2);
+  background: #333333;
   border: 1px solid rgba(242, 246, 255, 0.65);
   box-sizing: border-box;
   border-radius: 4px;
   height: 45px;
   margin-bottom: 10px;
   padding: 8px 15px;
+  color: #ffffff;
 }
 .login input[type="checkbox"] {
   background: rgba(255, 255, 255, 0.2);
@@ -62,11 +65,12 @@ export default {};
   color: #ffffff;
 }
 .login button {
-  background: #a7dfa7;
+  background: #3b3b3b;
   border: 1px solid rgba(242, 246, 255, 0.65);
   box-sizing: border-box;
   border-radius: 4px;
   height: 45px;
+  color: #ffffff;
   cursor: pointer;
 }
 </style>

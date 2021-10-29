@@ -19,7 +19,7 @@
     <td>{{ libelle }}</td>
     <td class="text-center">
       <button class="btn-waiting" v-if="live === 0">Waiting</button>
-      <button v-else class="btn-player">
+      <button v-else class="btn-player" @click="handleVideo">
         Play
         <svg
           width="47"
@@ -106,9 +106,13 @@ export default {
     libelle: String,
     link: String,
     live: [Number, String],
-
     rankings: {
       type: Array,
+    },
+  },
+  methods: {
+    handleVideo() {
+      this.$emit("linkValue", this.link);
     },
   },
 };

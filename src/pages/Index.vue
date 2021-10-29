@@ -5,8 +5,8 @@
     </div>
     <div class="home-content">
       <VirtualSoocer />
-      <Screen />
-      <MatchList />
+      <Screen :url="linkStream" />
+      <MatchList @linkValue="handleLinkValue" />
     </div>
     <div class="sidebar-right">
       <!--  <ClasseWorld /> -->
@@ -22,6 +22,7 @@ import MatchList from "@/components/Match";
 import ClasseWorld from "@/components/Match/ClasseWorld.vue";
 import ClasseMatch from "@/components/Match/ClasseMatch.vue";
 import VirtualSoocer from "@/components/VirtualSoocer";
+import { getStream } from "@/api";
 export default {
   metaInfo: {
     title: "Hello, world!",
@@ -33,6 +34,20 @@ export default {
     ClasseWorld,
     ClasseMatch,
     VirtualSoocer,
+  },
+  data() {
+    return {
+      linkStream: "",
+    };
+  },
+  methods: {
+    handleLinkValue(e) {
+      getStream(e).then((res) => {
+        console.log(res.data);
+        let link = res.data[0].link;
+        this.linkStream = link;
+      });
+    },
   },
 };
 </script>

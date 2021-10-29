@@ -1,6 +1,18 @@
 <template>
   <div class="screen-content">
     <div class="screen">
+      <iframe
+        allow="encrypted-media"
+        width="1105"
+        height="498"
+        marginwidth="0"
+        marginheight="0"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="yes"
+        :src="url"
+      ></iframe>
+
       <!--  <div class="btnplay">
         <svg
           width="118"
@@ -71,6 +83,9 @@
 <script>
 export default {
   name: "Screen",
+  props: {
+    url: String,
+  },
 };
 </script>
 
@@ -84,6 +99,12 @@ export default {
   width: 100%;
   height: 499px;
   background: black;
+}
+
+.screen iframe,
+.screen iframe html {
+  height: 100%;
+  width: 100%;
 }
 .btnplay {
   position: absolute;

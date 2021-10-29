@@ -30,9 +30,12 @@
       </div>
       <div class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
+
+        <g-link class="nav__link" to="/live-score/">Live score</g-link>
+        <g-link class="nav__link" to="/#d"> Eat-and-run verification</g-link>
+        <g-link class="nav__link" to="/#c">Overseas Dividend Flow</g-link>
+        <g-link class="nav__link" to="/#e">Guarantee company</g-link>
+        <g-link class="nav__link" to="/#f">VOD tube</g-link>
         <!-- <ul>
           <li>Menu 1</li>
           <li>Menu 2</li>
@@ -150,7 +153,7 @@ body {
   align-items: center;
   width: 100%;
   height: 80px;
-  background-color: #1a2151;
+  background-color: #1a1a1a;
   padding-top: 27px;
   padding-bottom: 27px;
   font-family: Roboto;
@@ -183,22 +186,30 @@ body {
   min-height: 53px;
   /*background-color: #a7dfa7;*/
   background-color: #1a1a1a;
+  border-bottom: 1px solid rgba(242, 246, 255, 0.65);
+  border-top: 3px solid #00ff00;
 }
 .nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
-  margin-right: 32px;
-  color: #212c4f;
+  min-height: 53px;
+  margin: 0;
+  color: #ffffff;
   text-decoration: none;
+  padding: 3px 7px;
   transition: all 0.5s ease-in-out 0s;
+  border-left: 1px dashed rgba(242, 246, 255, 0.65);
 }
 .active--exact {
-  background-color: rgba(33, 44, 79, 0.9);
-  color: #ffffff !important;
+  color: #000000 !important;
   padding: 3px 7px;
-  border-radius: 10px;
+  background-color: #00ff00;
   transition: all;
 }
 .nav ul:last-child {

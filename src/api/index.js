@@ -20,3 +20,10 @@ export function getAllVirtualSoccer() {
     method: "get",
   });
 }
+
+export function getStream(param) {
+  return request({
+    url: `broadcast-events?url=${param}`,
+    method: "get",
+  });
+}
