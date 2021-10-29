@@ -410,13 +410,11 @@ export default {
           let data = result.data;
           this.categorie = data.map((cat) => {
             this.categories.push(cat.name);
-            console.log(cat.events.topEvent);
-            // console.log(cat.events.allEvent);
             cat.events.allEvent.forEach((event) => {
               event.events.forEach((match) => {
                 this.allEvents.push({
                   categorie: cat.name,
-                  date: event.schedule,
+                  date: match.scheduleDate,
                   link: match.link,
                   live: match.live,
                   libille: match.name,
@@ -437,7 +435,7 @@ export default {
             });
           });
           console.log("hello");
-          console.log(this.allEvent);
+          console.log(this.allEvents);
         })
         .catch((err) => {});
     },
