@@ -11,12 +11,14 @@
         </li>
       </ul>
       <nemed v-if="menuSelect === 'nemed'" />
+      <score v-if="menuSelect === 'live-score'" />
     </div>
   </Layout>
 </template>
 
 <script>
 import Nemed from "./live/nemed";
+import Score from "./live/score.vue";
 
 export default {
   metaInfo: {
@@ -24,10 +26,11 @@ export default {
   },
   components: {
     Nemed,
+    Score,
   },
   data() {
     return {
-      menuSelect: "",
+      menuSelect: "nemed",
       menu: [
         {
           key: "nemed",
