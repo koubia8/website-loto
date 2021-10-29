@@ -10,39 +10,48 @@
           >
         </li>
       </ul>
-      <nemed v-if="menuSelect === 'nemed'" />
+      <named v-if="menuSelect === 'named'" />
       <score v-if="menuSelect === 'live-score'" />
+      <now-goal-score v-if="menuSelect === 'now-goal-score'" />
+      <flash-score v-if="menuSelect === 'flash-score'" />
+      <score-board v-if="menuSelect === 'score-board'" />
     </div>
   </Layout>
 </template>
 
 <script>
-import Nemed from "./live/nemed";
+import Named from "./live/named";
 import Score from "./live/score.vue";
+import NowGoalScore from "./live/nowgoal";
+import FlashScore from "./live/flashscore";
+import ScoreBoard from "./live/scoreboard";
 
 export default {
   metaInfo: {
-    title: "About us",
+    title: "Live score",
   },
   components: {
-    Nemed,
+    Named,
     Score,
+    NowGoalScore,
+    FlashScore,
+    ScoreBoard
   },
   data() {
     return {
-      menuSelect: "nemed",
+      menuSelect: "named",
       menu: [
         {
-          key: "nemed",
-          name: "Nemed score",
+          key: "named",
+          name: "Named score",
         },
         {
           key: "live-score",
           name: "Live score",
         },
         {
-          key: "naugol-score",
-          name: "Naugol score",
+          key: "now-goal-score",
+          name: "Now goal score",
         },
         {
           key: "flash-score",
