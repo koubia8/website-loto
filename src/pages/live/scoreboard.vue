@@ -2,10 +2,8 @@
   <iframe
     src="https://www.livesport.com/en/"
     width="100%"
-    height="5000px"
-    frameborder="0"
-    scrolling="yes"
-    allowfullscreen="allowfullscreen"
+    height="2500px"
+    allowfullscreen
   ></iframe>
 </template>
 

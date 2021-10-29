@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      menuSelect: "bet-explorer",
+      menuSelect: "oz-portal",
       menu: [
         {
           key: "oz-portal",

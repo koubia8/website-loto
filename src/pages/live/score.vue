@@ -1,11 +1,10 @@
 <template>
   <iframe
     src="https://livescore.padostr.com/livescore/"
+    sandbox="allow-same-origin allow-forms allow-scripts"
     width="100%"
-    height="5000px"
-    frameborder="0"
-    scrolling="yes"
-    allowfullscreen="allowfullscreen"
+    height="2500px"
+    allowfullscreen
   ></iframe>
 </template>
 
