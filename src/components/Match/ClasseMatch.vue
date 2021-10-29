@@ -146,7 +146,7 @@ export default {
     scrolling="yes"
     allowfullscreen="allowfullscreen"
     width="100%"
-    height="5000px"
+    height="700px"
     frameborder="0"
   ></iframe>
 </template>
