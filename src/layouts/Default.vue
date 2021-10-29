@@ -55,7 +55,14 @@
     </header-nav>
 
     <div class="main">
+      <div class="sidebar-left">
+        <Login />
+      </div>
       <slot />
+      <div class="sidebar-right">
+        <!--  <ClasseWorld /> -->
+        <ClasseMatch />
+      </div>
     </div>
     <div class="footer">
       <h2>SPORT IS LIVE</h2>
@@ -84,10 +91,13 @@ query {
 <script>
 import HeaderNav from "./Header.vue";
 import Heroe from "./components/Heroe";
+import Login from "@/components/Login";
+import ClasseWorld from "@/components/Match/ClasseWorld.vue";
+import ClasseMatch from "@/components/Match/ClasseMatch.vue";
 
 export default {
   name: "Layout",
-  components: { HeaderNav, Heroe },
+  components: { HeaderNav, Heroe, ClasseWorld, ClasseMatch, Login },
 };
 </script>
 <style>
@@ -106,7 +116,9 @@ body {
   /*background-color: #212c4f;*/
   background-color: #141414;
 }
-
+.main {
+  display: flex;
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -238,5 +250,24 @@ body {
   margin-top: 22px;
   margin-bottom: 22px;
   font-size: 16px;
+}
+
+.sidebar-left,
+.sidebar-right {
+  width: 20%;
+  display: flex;
+}
+.sidebar-left {
+  padding: 35px 20px 5px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.sidebar-right {
+  padding: 35px 20px 5px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
 }
 </style>
