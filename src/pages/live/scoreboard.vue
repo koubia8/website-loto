@@ -10,7 +10,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'score-board'
+};
 </script>
 
 <style lang="scss" scoped></style>

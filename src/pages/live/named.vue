@@ -10,7 +10,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'named'
+};
 </script>
 
 <style lang="scss" scoped></style>

@@ -10,7 +10,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'now-goal'
+};
 </script>
 
 <style lang="scss" scoped></style>

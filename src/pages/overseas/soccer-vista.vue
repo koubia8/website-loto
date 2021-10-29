@@ -1,6 +1,6 @@
 <template>
   <iframe
-    src="https://www.flashscore.co.kr/"
+    src="https://www.soccervista.com/"
     scrolling="yes"
     allowfullscreen="allowfullscreen"
     width="100%"
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "flash-score"
+  name: "soccer-vista"
 };
 </script>
 

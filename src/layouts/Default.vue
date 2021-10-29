@@ -33,7 +33,7 @@
 
         <g-link class="nav__link" to="/live-score/">Live score</g-link>
         <g-link class="nav__link" to="/#g"> Eat-and-run verification</g-link>
-        <g-link class="nav__link" to="/#c">Overseas Dividend Flow</g-link>
+        <g-link class="nav__link" to="/overseas-dividend-flow/">Overseas Dividend Flow</g-link>
         <g-link class="nav__link" to="/#e">Guarantee company</g-link>
         <g-link class="nav__link" to="/#f">VOD tube</g-link>
         <!-- <ul>
