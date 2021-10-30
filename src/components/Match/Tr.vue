@@ -4,7 +4,7 @@
       <img width="30" :src="require(`@/assets/icon/${categorie}.png`)" />
     </td>
     <td class="text-left">{{ date }}</td>
-    <td class="text-center">{{ categorie | fuppercaseFirst }}</td>
+    <td class="text-center">{{ categorie | uppercaseFirst }}</td>
     <td>{{ libelle }}</td>
     <td class="text-center">
       <button class="btn-waiting" v-if="live === 0">Waiting</button>
@@ -85,7 +85,7 @@ import { uppercaseFirst } from "@/utils";
 export default {
   name: "Tr",
   filters: {
-    fuppercaseFirst: uppercaseFirst,
+    uppercaseFirst: uppercaseFirst,
   },
   props: {
     type: String,

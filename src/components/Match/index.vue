@@ -3,7 +3,7 @@
     <div class="categorie">
       <div class="item" v-for="(item, index) in categories" :key="index">
         <!--  <img src="@/assets/ballon-de-football.png" /> -->
-        <span @click="handleFilter(item)">{{ item }}</span>
+        <span @click="handleFilter(item)">{{ item | fupperCase }}</span>
       </div>
     </div>
     <h1>Top Matches Today</h1>
@@ -64,9 +64,13 @@
 <script>
 import Ligne from "./Tr.vue";
 import { getAllStreams } from "@/api";
+import { upperCase } from "@/utils";
 
 export default {
   name: "Match-List",
+  filters: {
+    fupperCase: upperCase,
+  },
   components: { Ligne },
 
   data() {
@@ -377,7 +381,7 @@ export default {
           return item;
         }
       });
-
+      window.console.log(search_array);
       return search_array;
     },
     filteredDataTopEvent: function() {
@@ -440,8 +444,8 @@ export default {
         .catch((err) => {});
     },
     handleFilter(item) {
+      console.log(item);
       this.nameSelect = item;
-      cons;
     },
     handleLinkValue(e) {
       this.$emit("linkValue", e);
