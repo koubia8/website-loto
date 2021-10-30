@@ -33,12 +33,18 @@
 
         <g-link class="nav__link" to="/live-score/">Live score</g-link>
         <g-link class="nav__link" to="/#g"> Eat-and-run verification</g-link>
-        <g-link class="nav__link" to="/#c">Overseas Dividend Flow</g-link>
+        <g-link class="nav__link" to="/overseas-dividend-flow/"
+          >Overseas Dividend Flow</g-link
+        >
         <g-link class="nav__link" to="/#e">Guarantee company</g-link>
         <g-link class="nav__link" to="/#f">VOD tube</g-link>
-        <g-link class="nav__link" to="/#f">VOD tube</g-link>
-        <g-link class="nav__link" to="/#f">VOD tube</g-link>
-        <g-link class="nav__link" to="/#f">VOD tube</g-link>
+        <g-link class="nav__link" to="/#p">Powerball analysis</g-link>
+        <g-link class="nav__link" to="/#s">Sports analysis</g-link>
+
+        <g-link class="nav__link" to="/#c">Community</g-link>
+        <g-link class="nav__link" to="/#sc">Service center</g-link>
+        <g-link class="nav__link" to="/#att">Attendance</g-link>
+        <g-link class="nav__link" to="/#vsa">Virtual sports analysis</g-link>
         <!-- <ul>
           <li>Menu 1</li>
           <li>Menu 2</li>
@@ -140,7 +146,7 @@ body {
   width: 100%;
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
 }
 .nav__link {
@@ -211,14 +217,14 @@ body {
   align-items: center;
   flex-grow: 1;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
+
+  font-weight: 400;
+  font-size: 14px;
   min-height: 53px;
   margin: 0;
   color: #ffffff;
   text-decoration: none;
-  padding: 3px 7px;
+  padding: 3px 5px;
   transition: all 0.5s ease-in-out 0s;
   border-left: 1px dashed rgba(242, 246, 255, 0.65);
 }

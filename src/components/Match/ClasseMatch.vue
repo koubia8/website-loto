@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div class="classe-match">
     <h4>실시간 전세계에서 몰리는 경기 순위</h4>
     <hr />
@@ -139,4 +139,19 @@ export default {
 .classe-match table tr td .name span {
   margin-left: 4px;
 }
-</style>
+</style>-->
+<template>
+  <iframe
+    src="https://sutv7.com/team_rank/rank.php"
+    sandbox="allow-same-origin allow-forms allow-scripts"
+    allowfullscreen
+    width="100%"
+    height="700px"
+  ></iframe>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped></style>

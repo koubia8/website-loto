@@ -441,6 +441,7 @@ export default {
     },
     handleFilter(item) {
       this.nameSelect = item;
+      cons;
     },
     handleLinkValue(e) {
       this.$emit("linkValue", e);

@@ -1,6 +1,6 @@
 <template>
   <iframe
-    src="https://livescore.padostr.com/named/"
+    src="https://www.vitibet.com/"
     sandbox="allow-same-origin allow-forms allow-scripts"
     allowfullscreen
     width="100%"
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'named'
+  name: "vitibet"
 };
 </script>
 
