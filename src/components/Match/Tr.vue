@@ -82,12 +82,11 @@
       </button>
     </td>
     <td>
-      <div class="ranking-group" v-if="true">
+      <div class="ranking-group">
         <span class="ranking" v-for="(item, index) in rankings" :key="index">
           {{ item }}
         </span>
       </div>
-      <div v-else></div>
     </td>
   </tr>
 </template>
@@ -106,9 +105,11 @@ export default {
     libelle: String,
     link: String,
     live: [Number, String],
-    rankings: {
-      type: Array,
-    },
+  },
+  data() {
+    return {
+      rankings: [1, 2, 3],
+    };
   },
   methods: {
     handleVideo() {

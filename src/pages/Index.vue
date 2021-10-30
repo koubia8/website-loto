@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <div class="home-content">
-      <VirtualSoocer />
-      <Screen :url="linkStream" />
+      <!--       <VirtualSoocer /> -->
+      <Screen :src="linkStream" />
       <MatchList @linkValue="handleLinkValue" />
     </div>
   </Layout>
@@ -12,7 +12,7 @@
 import Screen from "@/components/Screen";
 import MatchList from "@/components/Match";
 
-import VirtualSoocer from "@/components/VirtualSoocer";
+// import VirtualSoocer from "@/components/VirtualSoocer";
 import { getStream } from "@/api";
 export default {
   metaInfo: {
@@ -21,7 +21,7 @@ export default {
   components: {
     Screen,
     MatchList,
-    VirtualSoocer,
+    /* VirtualSoocer, */
   },
   data() {
     return {
@@ -32,7 +32,7 @@ export default {
     handleLinkValue(e) {
       getStream(e).then((res) => {
         console.log(res.data);
-        let link = res.data[0].link;
+        let link = res.data[0].media;
         this.linkStream = link;
       });
     },

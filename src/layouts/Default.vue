@@ -36,6 +36,9 @@
         <g-link class="nav__link" to="/#c">Overseas Dividend Flow</g-link>
         <g-link class="nav__link" to="/#e">Guarantee company</g-link>
         <g-link class="nav__link" to="/#f">VOD tube</g-link>
+        <g-link class="nav__link" to="/#f">VOD tube</g-link>
+        <g-link class="nav__link" to="/#f">VOD tube</g-link>
+        <g-link class="nav__link" to="/#f">VOD tube</g-link>
         <!-- <ul>
           <li>Menu 1</li>
           <li>Menu 2</li>
@@ -115,6 +118,7 @@ body {
   line-height: 1.5;
   /*background-color: #212c4f;*/
   background-color: #141414;
+  box-sizing: border-box;
 }
 .main {
   display: flex;
