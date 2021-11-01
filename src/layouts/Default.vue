@@ -37,7 +37,7 @@
           >Overseas Dividend Flow</g-link
         >
         <g-link class="nav__link" to="/powerball/">Powerball analysis</g-link>
-        <g-link class="nav__link" to="/#s">Sports analysis</g-link>
+        <g-link class="nav__link" to="/sport-analysis/">Sports analysis</g-link>
 
         <g-link class="nav__link" to="/#c">Community</g-link>
         <g-link class="nav__link" to="/#sc">Customer center</g-link>
