@@ -1,21 +1,23 @@
 <template>
   <Layout>
     <div class="home-content">
-      <!--<iframe
-        src="https://reystream.tv/tVdark/black/index.php"
-        id="iframe-content"
-        scrolling="no"
-        sandbox="allow-same-origin allow-scripts allow-modals"
-        allowFullScreen
-        width="100%"
-        height="1500px"
-      ></iframe>-->
+      <div id="iframe-div">
+        <iframe
+          src="http://www.powerballgame.co.kr/?view=daylog"
+          id="iframe-content"
+          sandbox="allow-same-origin allow-forms allow-scripts"
+          scrolling="no"
+          allowFullScreen
+          width="1024" height="768"
+          style="-webkit-transform:scale(1.3);-moz-transform-scale(0.5);"
+        ></iframe>
+      </div>
     </div>
   </Layout>
 </template>
 
 <script>
-import axios from "axios";
+
 export default {
   metaInfo: {
     title: "Virtual soccer",
@@ -36,6 +38,23 @@ export default {
 <style scoped>
 .home-content {
   flex-grow: 1;
+}
+#iframe-div {
+  margin-top: 35px;
+  width: 98%;
+  height: 1940px;
+  border: 1px solid #000;
+  overflow: hidden;
+  position: relative;
+}
+#iframe-content {
+  position: absolute;
+  top: -120px;
+  left: -445px;
+  right: -100px;
+  width: 1450px;
+  height: 1980px;
+  background-color: #fff;
 }
 ul {
   list-style-type: none;

@@ -36,14 +36,14 @@
         <g-link class="nav__link" to="/overseas-dividend-flow/"
           >Overseas Dividend Flow</g-link
         >
-        <g-link class="nav__link" to="/#p">Powerball analysis</g-link>
+        <g-link class="nav__link" to="/powerball/">Powerball analysis</g-link>
         <g-link class="nav__link" to="/#s">Sports analysis</g-link>
 
         <g-link class="nav__link" to="/#c">Community</g-link>
         <g-link class="nav__link" to="/#sc">Customer center</g-link>
         <g-link class="nav__link" to="/#att">Attendance</g-link>
         <g-link class="nav__link" to="/virtual-soccer/">Virtual sports analysis</g-link>
-        <g-link class="nav__link" to="/webtoon">Webtoon</g-link>
+        <g-link class="nav__link" to="/webtoon/">Webtoon</g-link>
         <!-- <ul>
           <li>Menu 1</li>
           <li>Menu 2</li>
