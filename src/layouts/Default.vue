@@ -36,15 +36,14 @@
         <g-link class="nav__link" to="/overseas-dividend-flow/"
           >Overseas Dividend Flow</g-link
         >
-        <g-link class="nav__link" to="/#e">Guarantee company</g-link>
-        <g-link class="nav__link" to="/#f">VOD tube</g-link>
         <g-link class="nav__link" to="/#p">Powerball analysis</g-link>
         <g-link class="nav__link" to="/#s">Sports analysis</g-link>
 
         <g-link class="nav__link" to="/#c">Community</g-link>
-        <g-link class="nav__link" to="/#sc">Service center</g-link>
+        <g-link class="nav__link" to="/#sc">Customer center</g-link>
         <g-link class="nav__link" to="/#att">Attendance</g-link>
-        <g-link class="nav__link" to="/#vsa">Virtual sports analysis</g-link>
+        <g-link class="nav__link" to="/virtual-soccer/">Virtual sports analysis</g-link>
+        <g-link class="nav__link" to="/#vsa">Webtoon</g-link>
         <!-- <ul>
           <li>Menu 1</li>
           <li>Menu 2</li>
@@ -262,9 +261,12 @@ body {
   font-size: 16px;
 }
 
-.sidebar-left,
+.sidebar-left {
+  width: 15%;
+  display: flex;
+}
 .sidebar-right {
-  width: 20%;
+  width: 18%;
   display: flex;
 }
 .sidebar-left {

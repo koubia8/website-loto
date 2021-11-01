@@ -2,7 +2,7 @@
   <Layout>
     <div class="home-content">
       <!--       <VirtualSoocer /> -->
-      <Screen :src="linkStream" />
+      <!--<Screen :src="linkStream" />-->
       <MatchList @linkValue="handleLinkValue" />
     </div>
   </Layout>

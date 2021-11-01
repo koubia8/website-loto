@@ -1,36 +1,36 @@
 <template>
   <div id="iframe-div">
     <iframe
-      src="https://pick-365.com/broadcast/"
+      src="https://pick-365.com/game/bet365vSoccer/eurocup/"
       id="iframe-content"
       scrolling="no"
       sandbox="allow-same-origin allow-forms allow-scripts"
-      allowfullscreen
+      allowFullScreen
       width="100%"
-      height="5500px"
+      height="1500px"
     ></iframe>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home player",
+  name: "euro-cup",
 };
 </script>
 
 <style scoped>
 #iframe-div {
-  margin-top: 30px;
   width: 100%;
-  height: 5485px;
+  height: 1990px;
   overflow: hidden;
   position: relative;
 }
+
 #iframe-content {
   position: absolute;
-  top: -180px;
-  left: -285px;
-  width: 1400px;
-  height: 5800px;
+  top: -150px;
+  left: -282px;
+  width: 1450px;
+  height: 1980px;
 }
 </style>
