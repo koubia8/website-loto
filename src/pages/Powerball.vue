@@ -3,7 +3,7 @@
     <div class="home-content">
       <div id="iframe-div">
         <iframe
-          src="https://www.powerballgame.co.kr/?view=daylog"
+          src="https://www.powerballgame.co.kr/"
           id="iframe-content"
           sandbox="allow-same-origin allow-forms allow-scripts"
           scrolling="no"
@@ -50,7 +50,7 @@ export default {
 #iframe-content {
   position: absolute;
   top: -120px;
-  left: -445px;
+  left: -440px;
   right: -100px;
   width: 1450px;
   height: 1980px;

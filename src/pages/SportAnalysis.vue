@@ -6,21 +6,32 @@
           <a
             :class="{ active: menuSelect === menu.key }"
             @click="handleSelectMenu(menu.key)"
-          >{{ menu.name }}</a
-          >
+          >{{ menu.name }}</a>
         </li>
       </ul>
+      <basketball v-if="menuSelect === 'basketball'" />
+      <soccer v-if="menuSelect === 'soccer'" />
+      <volleyball v-if="menuSelect === 'volleyball'" />
+      <baseball v-if="menuSelect === 'baseball'" />
     </div>
   </Layout>
 </template>
 
 <script>
+import Basketball from './sport-analysis/basketball'
+import Soccer from './sport-analysis/soccer'
+import Volleyball from './sport-analysis/volleyball'
+import Baseball from './sport-analysis/basketball'
 
 export default {
   metaInfo: {
     title: "Sport Analysis",
   },
   components: {
+    Basketball,
+    Soccer,
+    Volleyball,
+    Baseball
   },
   data() {
     return {
