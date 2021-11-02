@@ -145,6 +145,7 @@ export default {
     src="https://sutv7.com/team_rank/rank.php"
     sandbox="allow-same-origin allow-forms allow-scripts"
     scrolling="no"
+    frameborder="0"
     width="100%"
     height="710px"
   ></iframe>

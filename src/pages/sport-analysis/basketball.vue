@@ -8,7 +8,7 @@
       allowfullscreen
       width="100%"
       height="700px"
-      style="-webkit-transform:scale(1.1);-moz-transform-scale(0.5);"
+      style="-webkit-transform:scale(1.15);-moz-transform-scale(0.5);"
     ></iframe>
   </div>
 </template>
@@ -21,18 +21,19 @@ export default {
 
 <style scoped>
 #iframe-div {
-  padding-top: 35px;
+  margin: auto;
   width: 100%;
-  height: 800px;
+  height: 830px;
   overflow: hidden;
   position: relative;
 }
 
 #iframe-content {
   position: absolute;
-  top: -475px;
+  top: -440px;
   left: -350px;
   width: 1450px;
   height: 1980px;
+  margin: auto;
 }
 </style>

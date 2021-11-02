@@ -5,7 +5,7 @@
         <iframe
           src="https://www.powerballgame.co.kr/"
           id="iframe-content"
-          sandbox="allow-same-origin allow-forms allow-scripts"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation"
           scrolling="no"
           allowFullScreen
           width="1024" height="768"

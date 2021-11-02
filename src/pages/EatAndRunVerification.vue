@@ -1,34 +1,45 @@
 <template>
   <Layout>
     <div class="home-content">
-      <iframe
-        src="https://copytoon219.com/embed/%EC%9B%B9%ED%88%B0"
-        id="iframe-content"
-        scrolling="no"
-        sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation"
-        allowFullScreen
-        width="100%"
-        height="1500px"
-      ></iframe>
+      <ul>
+        <li v-for="(menu, index) in menu" :key="index">
+          <a
+            :class="{ active: menuSelect === menu.key }"
+            @click="handleSelectMenu(menu.key)"
+          >{{ menu.name }}</a>
+        </li>
+      </ul>
     </div>
   </Layout>
 </template>
 
 <script>
-import $ from 'jquery';
+
 export default {
   metaInfo: {
-    title: "Virtual soccer",
+    title: "Eat and run verification",
   },
   components: {
   },
   data() {
     return {
+      menuSelect: "eat-and-run",
+      menu: [
+        {
+          key: "eat-and-run",
+          name: "Eat & run verification",
+        },
+        {
+          key: "eating-site",
+          name: "Eating site",
+        },
+      ],
     };
   },
-  async mounted () {
-  },
   methods: {
+    handleSelectMenu(menu) {
+      this.menuSelect = menu;
+    },
   },
 };
 </script>

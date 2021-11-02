@@ -9,7 +9,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "gridsome": "^0.7.0",
-    "gridsome-plugin-sass-resources-loader": "^0.0.3"
-  },
-  "devDependencies": {}
+    "gridsome-plugin-sass-resources-loader": "^0.0.3",
+    "jquery": "^3.6.0"
+  }
 }
