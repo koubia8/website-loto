@@ -144,9 +144,10 @@ export default {
   <iframe
     src="https://sutv7.com/team_rank/rank.php"
     sandbox="allow-same-origin allow-forms allow-scripts"
-    allowfullscreen
+    scrolling="no"
+    frameborder="0"
     width="100%"
-    height="700px"
+    height="710px"
   ></iframe>
 </template>
 
