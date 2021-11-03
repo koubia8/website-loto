@@ -16,7 +16,7 @@ export default {
     uchat.setAttribute("style", " width:100%; height:100%;");
     uchat.setAttribute(
       "user_data",
-      "auth guest|nick koubia8|other nosync|room sport-tv|time 1635940228|hash 9cbfc1ac5bc539a1bfcec1454bd308dc"
+      "auth guest|nick guest|other nosync|room sport-tv|time 1635940228|hash 9cbfc1ac5bc539a1bfcec1454bd308dc"
     );
     console.log(uchat);
 
