@@ -1,12 +1,12 @@
 <template>
-  <pick-365 />
+  <chat />
 </template>
 
 <script>
-import Pick365 from "@/components/pick365";
+import Chat from "@/components/Chat";
 export default {
   components: {
-    Pick365,
+    Chat,
   },
 };
 </script>

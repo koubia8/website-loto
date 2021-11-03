@@ -15,21 +15,16 @@
 </template>
 
 <script>
-import $ from 'jquery';
 export default {
   metaInfo: {
     title: "Virtual soccer",
   },
-  components: {
-  },
+  components: {},
   data() {
-    return {
-    };
+    return {};
   },
-  async mounted () {
-  },
-  methods: {
-  },
+  async mounted() {},
+  methods: {},
 };
 </script>
 

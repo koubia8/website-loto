@@ -32,15 +32,21 @@
         <g-link class="nav__link" to="/">Home</g-link>
 
         <g-link class="nav__link" to="/live-score/">Live score</g-link>
-        <g-link class="nav__link" to="/eat-and-run-verification/"> Eat & run verification</g-link>
-        <g-link class="nav__link" to="/overseas-dividend-flow/">Overseas Dividend Flow</g-link>
+        <g-link class="nav__link" to="/eat-and-run-verification/">
+          Eat & run verification</g-link
+        >
+        <g-link class="nav__link" to="/overseas-dividend-flow/"
+          >Overseas Dividend Flow</g-link
+        >
         <g-link class="nav__link" to="/powerball/">Powerball analysis</g-link>
         <g-link class="nav__link" to="/sport-analysis/">Sports analysis</g-link>
 
         <g-link class="nav__link" to="/community/">Community</g-link>
         <g-link class="nav__link" to="/#sc">Customer center</g-link>
         <g-link class="nav__link" to="/#att">Attendance</g-link>
-        <g-link class="nav__link" to="/virtual-soccer/">Virtual sports analysis</g-link>
+        <g-link class="nav__link" to="/virtual-soccer/"
+          >Virtual sports analysis</g-link
+        >
         <g-link class="nav__link" to="/webtoon/">Webtoon</g-link>
         <!-- <ul>
           <li>Menu 1</li>
@@ -63,6 +69,10 @@
     <div class="main">
       <div class="sidebar-left">
         <Login />
+        <div>
+          <h1>Chat</h1>
+          <Chat />
+        </div>
       </div>
       <slot />
       <div class="sidebar-right">
@@ -100,10 +110,11 @@ import Heroe from "./components/Heroe";
 import Login from "@/components/Login";
 import ClasseWorld from "@/components/Match/ClasseWorld.vue";
 import ClasseMatch from "@/components/Match/ClasseMatch.vue";
+import Chat from "@/components/Chat";
 
 export default {
   name: "Layout",
-  components: { HeaderNav, Heroe, ClasseWorld, ClasseMatch, Login },
+  components: { HeaderNav, Heroe, ClasseWorld, ClasseMatch, Login, Chat },
 };
 </script>
 <style>
@@ -123,6 +134,7 @@ body {
   background-color: #141414;
   box-sizing: border-box;
 }
+
 .main {
   display: flex;
 }
@@ -260,11 +272,11 @@ body {
 }
 
 .sidebar-left {
-  width: 15%;
+  width: 22%;
   display: flex;
 }
 .sidebar-right {
-  width: 20%;
+  width: 22%;
   display: flex;
 }
 .sidebar-left {
