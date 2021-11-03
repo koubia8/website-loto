@@ -14,10 +14,7 @@ export default {
     let uchat = document.createElement("u-chat");
     uchat.setAttribute("room", "sport-tv");
     uchat.setAttribute("style", " width:100%; height:100%;");
-    uchat.setAttribute(
-      "user_data",
-      "auth guest|nick guest|other nosync|room sport-tv|time 1635940228|hash 9cbfc1ac5bc539a1bfcec1454bd308dc"
-    );
+    uchat.setAttribute("user_data", uchatData());
     console.log(uchat);
 
     document.getElementById("uchat").appendChild(uchat);
@@ -32,7 +29,7 @@ export default {
 
 <style scoped>
 #uchat {
-  height: 200%;
+  height: 500px;
 }
 #uchat .top .logo {
   height: 100%;

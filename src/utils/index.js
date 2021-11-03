@@ -10,7 +10,7 @@ export function upperCase(string) {
 
 export function uchatData() {
   let time = Date.now();
-
+  let icone = "../assets/guest.gif";
   let has = md5("9a6f4afab3716556b8f58a6af6bb70e5");
-  return `auth admin|id koubia8@40gmail.com|nick koubia8|other nosync|room sport-tv|time ${time}|hash ${has}`;
+  return `nick guest |other nosync|room sport-tv|time ${time}|hash ${has} | icons ${icone}`;
 }
