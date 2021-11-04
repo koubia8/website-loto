@@ -5,7 +5,7 @@
         <iframe
           src="https://www.powerballgame.co.kr/"
           id="iframe-content"
-          sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation"
+          sandbox="allow-same-origin allow-scripts allow-forms"
           scrolling="no"
           allowFullScreen
           width="1024" height="768"
@@ -20,7 +20,7 @@
 
 export default {
   metaInfo: {
-    title: "Virtual soccer",
+    title: "Porwerball",
   },
   components: {
   },

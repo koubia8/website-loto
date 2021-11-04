@@ -1,15 +1,17 @@
 <template>
   <Layout>
     <div class="home-content">
-      <iframe
-        src="https://copytoon219.com/embed/%EC%9B%B9%ED%88%B0"
-        id="iframe-content"
-        scrolling="no"
-        sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation"
-        allowFullScreen
-        width="100%"
-        height="1500px"
-      ></iframe>
+      <div id="iframe-div">
+        <iframe
+          src="https://kr-api.der.sn/players-content?url=https://copytoon219.com/"
+          id="iframe-content"
+          sandbox="allow-same-origin allow-scripts allow-forms"
+          allowFullScreen
+          width="100%"
+          height="5500px"
+          style="-webkit-transform:scale(0.96);-moz-transform-scale(0.5);"
+        ></iframe>
+      </div>
     </div>
   </Layout>
 </template>
@@ -17,7 +19,7 @@
 <script>
 export default {
   metaInfo: {
-    title: "Virtual soccer",
+    title: "Webtoon",
   },
   components: {},
   data() {
@@ -31,6 +33,22 @@ export default {
 <style scoped>
 .home-content {
   flex-grow: 1;
+}
+#iframe-div {
+  margin-top: 35px;
+  width: 100%;
+  height: 8500px;
+  overflow: hidden;
+  position: relative;
+}
+
+#iframe-content {
+  position: absolute;
+  top: -1425px;
+  left: -230px;
+  width: 1450px;
+  height: 10000px;
+  margin: auto;
 }
 ul {
   list-style-type: none;
