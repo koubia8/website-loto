@@ -3,7 +3,6 @@
     <header-nav> </header-nav>
 
     <div class="main">
-      {{ isToken }}
       <div class="sidebar-left">
         <Login v-if="!isToken" />
         <Profile v-if="isToken" />
@@ -63,7 +62,6 @@ export default {
   },
   computed: {
     isToken() {
-      window.console.log(getToken());
       if (getToken() !== null) {
         return true;
       } else {
