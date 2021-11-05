@@ -3,7 +3,7 @@ import axios from "axios";
 // creation du service axios instance
 
 const service = axios.create({
-  baseURL: "https://kr-api.sn:3001",
+  baseURL: "https://kr-api.der.sn:3001",
   timeout: 40000,
 });
 
