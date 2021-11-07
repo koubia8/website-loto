@@ -11,7 +11,6 @@
         </li>
       </ul>
       <named v-if="menuSelect === 'named'" />
-      <score v-if="menuSelect === 'live-score'" />
       <now-goal-score v-if="menuSelect === 'now-goal-score'" />
       <flash-score v-if="menuSelect === 'flash-score'" />
       <score-board v-if="menuSelect === 'score-board'" />
@@ -21,7 +20,6 @@
 
 <script>
 import Named from "./live/named";
-import Score from "./live/score.vue";
 import NowGoalScore from "./live/nowgoal";
 import FlashScore from "./live/flashscore";
 import ScoreBoard from "./live/scoreboard";
@@ -32,7 +30,6 @@ export default {
   },
   components: {
     Named,
-    Score,
     NowGoalScore,
     FlashScore,
     ScoreBoard
@@ -44,10 +41,6 @@ export default {
         {
           key: "named",
           name: "Named score",
-        },
-        {
-          key: "live-score",
-          name: "Live score",
         },
         {
           key: "now-goal-score",

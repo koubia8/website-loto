@@ -8,8 +8,8 @@
           sandbox="allow-same-origin allow-scripts allow-forms"
           scrolling="no"
           allowFullScreen
-          width="1024" height="768"
-          style="-webkit-transform:scale(1.3);-moz-transform-scale(0.5);"
+          width="1024" height="3500"
+          style="-webkit-transform:scale(1.19);-moz-transform-scale(0.5);"
         ></iframe>
       </div>
     </div>
@@ -41,19 +41,19 @@ export default {
 }
 #iframe-div {
   margin-top: 35px;
-  width: 98%;
-  height: 1940px;
+  width: 100%;
+  height: 2220px;
   border: 1px solid #000;
   overflow: hidden;
   position: relative;
 }
 #iframe-content {
   position: absolute;
-  top: -120px;
-  left: -440px;
+  top: -160px;
+  left: -468px;
   right: -100px;
   width: 1450px;
-  height: 1980px;
+  height: 2250px;
   background-color: #fff;
 }
 ul {
