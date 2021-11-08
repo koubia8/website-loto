@@ -7,7 +7,6 @@ import { uchatData } from "@/utils";
 export default {
   components: {},
   mounted() {
-    console.log(uchatData());
     let recaptchaScript = document.createElement("script");
     recaptchaScript.setAttribute("src", "//client.uchat.io/uchat.js");
     document.head.appendChild(recaptchaScript);
@@ -15,7 +14,6 @@ export default {
     uchat.setAttribute("room", "sport-tv");
     uchat.setAttribute("style", " width:100%; height:100%;");
     uchat.setAttribute("user_data", uchatData());
-    console.log(uchat);
 
     document.getElementById("uchat").appendChild(uchat);
   },
