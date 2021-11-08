@@ -60,7 +60,7 @@ export default {
       return getUsername();
     },
     isToken() {
-      if (getToken() !== null) {
+      if (getToken() !== undefined) {
         return true;
       } else {
         return false;

@@ -1,26 +1,27 @@
+import Cookies from "js-cookie";
 const TokenKey = "token_access";
 const Username = "UserName";
 
 export function getToken() {
-  return localStorage.getItem(TokenKey);
+  return Cookies.get(TokenKey);
 }
 
 export function setToken(token) {
-  return localStorage.setItem(TokenKey, token);
+  return Cookies.set(TokenKey, token);
 }
 
 export function removeToken() {
-  return localStorage.removeItem(TokenKey);
+  return Cookies.remove(TokenKey);
 }
 
 export function getUsername() {
-  return localStorage.getItem(Username);
+  return Cookies.get(Username);
 }
 
 export function setUsername(username) {
-  return localStorage.setItem(Username, username);
+  return Cookies.set(Username, username);
 }
 
 export function removeUsername() {
-  return localStorage.removeItem(Username);
+  return Cookies.remove(Username);
 }
