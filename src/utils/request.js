@@ -1,9 +1,9 @@
 import axios from "axios";
-
+import { getToken } from "@/utils/storage";
 // creation du service axios instance
 
 const service = axios.create({
-  baseURL: "https://kr-api.der.sn:3001",
+  baseURL: "http://139.59.251.142:3000/",
   timeout: 40000,
 });
 
@@ -11,6 +11,9 @@ const service = axios.create({
 
 service.interceptors.request.use(
   (config) => {
+    if (getToken() !== undefined) {
+      config.headers["Authorization"] = "Bearer " + getToken();
+    }
     return config;
   },
   (error) => {

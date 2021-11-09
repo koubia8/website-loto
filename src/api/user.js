@@ -7,3 +7,11 @@ export function login(data) {
     data,
   });
 }
+
+export function newUser(data) {
+  return request({
+    url: "/auth/signup",
+    method: "put",
+    data,
+  });
+}

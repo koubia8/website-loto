@@ -1,21 +1,27 @@
 <template>
-  <div id="iframe-div">
-    <iframe
-      src="https://sutv7.com/bbs/board.php?bo_table=b_analysis"
-      id="iframe-content"
-      scrolling="no"
-      sandbox="allow-same-origin allow-forms allow-scripts"
-      allowfullscreen
-      width="100%"
-      height="700px"
-      style="-webkit-transform:scale(0.99);-moz-transform-scale(0.5);"
-    ></iframe>
+  <div>
+    <div id="iframe-div">
+      <iframe
+        src="https://sutv7.com/bbs/board.php?bo_table=b_analysis"
+        id="iframe-content"
+        scrolling="no"
+        sandbox="allow-same-origin allow-forms allow-scripts"
+        allowfullscreen
+        width="100%"
+        height="700px"
+        style="-webkit-transform:scale(0.99);-moz-transform-scale(0.5);"
+      ></iframe>
+    </div>
   </div>
 </template>
 
 <script>
+import Post from "@/components/form/Post.vue";
 export default {
   name: "baseball",
+  components: {
+    Post,
+  },
 };
 </script>
 
