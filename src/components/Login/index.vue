@@ -96,32 +96,4 @@ export default {
   border-bottom: 1px solid #ffffff;
   background: #1a1a1a;
 }
-.login input {
-  background: #333333;
-  border: 1px solid rgba(242, 246, 255, 0.65);
-  box-sizing: border-box;
-  border-radius: 4px;
-  height: 45px;
-  margin-bottom: 10px;
-  padding: 8px 15px;
-  color: #ffffff;
-}
-.login input[type="checkbox"] {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(242, 246, 255, 0.65);
-  box-sizing: border-box;
-  border-radius: 4px;
-}
-.login input::placeholder {
-  color: #ffffff;
-}
-.login button {
-  background: rgba(8, 161, 8, 0.8);
-  border: 1px solid rgba(242, 246, 255, 0.65);
-  box-sizing: border-box;
-  border-radius: 4px;
-  height: 45px;
-  color: #ffffff;
-  cursor: pointer;
-}
 </style>

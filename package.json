@@ -7,6 +7,8 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^31.0.0",
+    "@ckeditor/ckeditor5-vue2": "^1.0.5",
     "axios": "^0.24.0",
     "gridsome": "^0.7.0",
     "gridsome-plugin-sass-resources-loader": "^0.0.3",

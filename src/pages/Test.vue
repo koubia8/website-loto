@@ -1,13 +1,13 @@
 <template>
-  <chat />
+  <div>
+    <post />
+  </div>
 </template>
 
 <script>
-import Chat from "@/components/Chat";
+import Post from "@/components/form/Post";
 export default {
-  components: {
-    Chat,
-  },
+  components: { Post },
 };
 </script>
 

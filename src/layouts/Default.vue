@@ -223,4 +223,50 @@ body {
   flex-direction: column;
   color: #ffffff;
 }
+
+input {
+  background: #333333;
+  border: 1px solid rgba(242, 246, 255, 0.65);
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 45px;
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  color: #ffffff;
+}
+input[type="checkbox"] {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(242, 246, 255, 0.65);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+input::placeholder {
+  color: #ffffff;
+}
+button {
+  background: rgba(8, 161, 8, 0.8);
+  border: 1px solid rgba(242, 246, 255, 0.65);
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 45px;
+  font-size: 0.875rem;
+  color: #ffffff;
+  padding: 10px 34px;
+  cursor: pointer;
+}
+.col-2 {
+  display: flex;
+}
+.col-2 > input {
+  margin-right: 12px;
+  flex-grow: 1;
+}
+
+.main .top .logo {
+  height: 100%;
+  cursor: pointer;
+  float: left;
+  margin-left: -44px !important;
+  margin-right: 6px;
+}
 </style>

@@ -6,8 +6,9 @@
 import { uchatData } from "@/utils";
 export default {
   components: {},
-  mounted() {
-    this.$nextTick(function() {
+  created() {
+    var self = this;
+    self.$nextTick(function() {
       let recaptchaScript = document.createElement("script");
       recaptchaScript.setAttribute("src", "//client.uchat.io/uchat.js");
       document.head.appendChild(recaptchaScript);
@@ -19,23 +20,20 @@ export default {
       document.getElementById("uchat").appendChild(uchat);
     });
   },
+  mounted() {
+    this.$nextTick(function() {});
+  },
   data() {
     return {
+      loaded: false,
       url: "http://client.uchat.io/uchat.js",
     };
   },
 };
 </script>
 
-<style scoped>
+<style>
 #uchat {
   height: 500px;
-}
-#uchat .top .logo {
-  height: 100%;
-  cursor: pointer;
-  float: left;
-  margin-left: -44px !important;
-  margin-right: 6px;
 }
 </style>

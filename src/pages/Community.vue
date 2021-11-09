@@ -6,28 +6,31 @@
           <a
             :class="{ active: menuSelect === menu.key }"
             @click="handleSelectMenu(menu.key)"
-          >{{ menu.name }}</a>
+            >{{ menu.name }}</a
+          >
         </li>
       </ul>
+      <free-analysis />
     </div>
   </Layout>
 </template>
 
 <script>
-
+import FreeAnalysis from "./community/freeAnalysis.vue";
 export default {
   metaInfo: {
     title: "community",
   },
   components: {
+    FreeAnalysis,
   },
   data() {
     return {
       menuSelect: "temporary-1",
       menu: [
         {
-          key: "temporary-1",
-          name: "Temporary 1",
+          key: "Free-Analysis",
+          name: "Free Analysis",
         },
         {
           key: "temporary-2",
