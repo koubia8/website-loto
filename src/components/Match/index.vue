@@ -1,10 +1,9 @@
 <template>
   <div id="iframe-div">
     <iframe
-      src="https://pick-365.com/broadcast/"
+      src="http://localhost:3003/players-content?url=https://pick-365.com/broadcast/"
       id="iframe-content"
-      scrolling="no"
-      sandbox="allow-same-origin allow-forms allow-scripts"
+      sandbox="allow-same-origin allow-top-navigation allow-scripts"
       allowfullscreen
       width="100%"
       height="5500px"
@@ -28,8 +27,8 @@ export default {
 }
 #iframe-content {
   position: absolute;
-  top: -180px;
-  left: -285px;
+  top: -100px;
+  left: -380px;
   width: 1400px;
   height: 5800px;
 }
