@@ -4,7 +4,7 @@ import { getToken } from "@/utils/storage";
 
 const service = axios.create({
   baseURL: "http://139.59.251.142:3000/",
-  timeout: 40000,
+  timeout: 60000,
 });
 
 // intercepteur de request

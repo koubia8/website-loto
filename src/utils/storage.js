@@ -19,7 +19,8 @@ export function getUsername() {
 }
 
 export function setUsername(username) {
-  return Cookies.set(Username, username);
+  let user = JSON.stringify(username);
+  return Cookies.set(Username, user);
 }
 
 export function removeUsername() {

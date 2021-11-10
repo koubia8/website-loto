@@ -19,7 +19,7 @@
     <ul class="right" v-if="isToken">
       <li class="username ">
         <img src="@/assets/guest.gif" />
-        <span>{{ userName }}</span>
+        <span>{{ user.name }}</span>
       </li>
       <li>|</li>
       <li class="mapage border-left">
@@ -56,8 +56,8 @@ export default {
     Logout,
   },
   computed: {
-    userName() {
-      return getUsername();
+    user() {
+      return JSON.parse(getUsername());
     },
     isToken() {
       if (getToken() !== undefined) {

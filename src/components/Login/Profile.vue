@@ -4,7 +4,7 @@
       <div class="avatar">
         <img src="@/assets/guest.gif" />
       </div>
-      <div class="username">{{ userName }}</div>
+      <div class="username">{{ user.name }}</div>
     </div>
     <!-- <a>
       déconnexion
@@ -31,8 +31,8 @@ import { getUsername } from "@/utils/storage";
 export default {
   name: "Profile",
   computed: {
-    userName() {
-      return getUsername();
+    user() {
+      return JSON.parse(getUsername());
     },
   },
   methods: {},
