@@ -1,14 +1,18 @@
 <template>
   <div id="uchat"></div>
 </template>
-<script async :src="{ url }"></script>
+<!--<script async :src="{ url }"></script>-->
 <script>
 import { uchatData } from "@/utils";
 export default {
   components: {},
   created() {
-    var self = this;
-    self.$nextTick(function() {
+    let script = document.createElement('script');
+    script.src = 'http://client.uchat.io/uchat.js';
+    document.getElementsByTagName('head')[0].appendChild(script)
+  },
+  mounted() {
+    this.$nextTick(function() {
       let recaptchaScript = document.createElement("script");
       recaptchaScript.setAttribute("src", "//client.uchat.io/uchat.js");
       document.head.appendChild(recaptchaScript);
@@ -19,9 +23,6 @@ export default {
 
       document.getElementById("uchat").appendChild(uchat);
     });
-  },
-  mounted() {
-    this.$nextTick(function() {});
   },
   data() {
     return {

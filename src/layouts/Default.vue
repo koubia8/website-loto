@@ -7,12 +7,12 @@
         <Login v-if="!isToken" />
         <Profile v-if="isToken" />
         <div>
-          <Chat />
+          <Chat :key="componentKey" />
         </div>
       </div>
       <slot />
       <div class="sidebar-right">
-        <!--  <ClasseWorld /> -->
+        <ClasseWorld />
         <ClasseMatch />
       </div>
     </div>
@@ -74,8 +74,21 @@ export default {
   data() {
     return {
       token: false,
+      componentKey: 0,
+      renderComponent: true,
+
     };
   },
+  mounted() {
+    this.forceRerender()
+    console.log(this.componentKey)
+  },
+  methods: {
+    forceRerender () {
+      console.log('rerendering')
+      this.componentKey++;
+    }
+  }
 };
 </script>
 <style>

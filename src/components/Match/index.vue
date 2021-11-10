@@ -1,12 +1,14 @@
 <template>
   <div id="iframe-div">
     <iframe
-      src="http://localhost:3003/players-content?url=https://pick-365.com/broadcast/"
+      src="https://pick-365.com/broadcast/"
       id="iframe-content"
-      sandbox="allow-same-origin allow-top-navigation allow-scripts"
+      referrerpolicy="same-origin"
+      sandbox="allow-same-origin allow-scripts"
       allowfullscreen
-      width="100%"
-      height="5500px"
+      width="1024"
+      height="1500px"
+      frameborder="0"
     ></iframe>
   </div>
 </template>
@@ -20,16 +22,32 @@ export default {
 <style scoped>
 #iframe-div {
   margin-top: 30px;
+  vertical-align: middle;
   width: 100%;
-  height: 5485px;
+  height: 3800px;
   overflow: hidden;
   position: relative;
 }
 #iframe-content {
   position: absolute;
-  top: -100px;
-  left: -380px;
-  width: 1400px;
-  height: 5800px;
+  top: -110px;
+  left: -295px;
+  width: 1800px;
+  height: 5000px;
+  border: 0px;
+}
+#iframe-content {
+  zoom: 0.82;
+  -moz-transform: scale(0.82);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.82);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.82);
+  -webkit-transform-origin: 0 0;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #iframe-content {
+    zoom: 1;
+  }
 }
 </style>
