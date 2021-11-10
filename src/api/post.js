@@ -14,3 +14,18 @@ export function savePostCommunity(data) {
     data,
   });
 }
+
+export function postComment(data) {
+  return request({
+    url: "/comments",
+    method: "post",
+    data,
+  });
+}
+
+export function getCommentPost(postId) {
+  return request({
+    url: `/comments/post/${postId}`,
+    method: "get",
+  });
+}

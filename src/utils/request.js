@@ -26,11 +26,11 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response) => {
     const res = response;
-    if (res.status !== 200) {
+    if (res.status === 200 || res.status === 201) {
       // complete avec des traitement
-      return Promise.reject("error");
-    } else {
       return res;
+    } else {
+      return Promise.reject("error");
     }
   },
   (error) => {

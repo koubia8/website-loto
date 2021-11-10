@@ -23,16 +23,19 @@
     <div class="post-body" v-html="post.text"></div>
     <div class="comment">
       <div class="comment-input">
-        <textarea placeholder="Comment..." cols="100" rows="3"></textarea>
-        <button><i class="fa fa-send"></i> Send</button>
+        <input
+          style="width:100%;height:70px;"
+          required
+          placeholder="Saisir un commentaire ..."
+          v-model="comment"
+          @keydown.enter="newComment"
+        />
+        <!--  <button><i class="fa fa-send"></i> Send</button> -->
       </div>
-      <div class="comment-item">
-        <span style="color:#ffff00; ">Author</span>
+      <div v-for="(item, index) in comments" :key="index" class="comment-item">
+        <span style="color:#ffff00; ">{{ item.author.name }}</span>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-          pariatur, eaque illum quibusdam deleniti vero fuga, distinctio
-          dignissimos ex quam non commodi nesciunt adipisci. Veritatis officiis
-          voluptates a. Magni, modi.
+          {{ item.text }}
         </p>
       </div>
     </div>
@@ -40,13 +43,54 @@
 </template>
 
 <script>
+import { postComment, getCommentPost } from "@/api/post";
+import { getUsername } from "@/utils/storage";
 export default {
   props: {
     post: Object,
   },
+  computed: {
+    user() {
+      return JSON.parse(getUsername());
+    },
+  },
+  data() {
+    return {
+      comment: "",
+      comments: [],
+    };
+  },
+  mounted() {
+    this.getComments();
+  },
   methods: {
     handleNext() {
       this.$emit("next", true);
+    },
+    newComment() {
+      let comment = {
+        author: this.user.userId,
+        published: true,
+        post: this.post._id,
+        text: this.comment,
+      };
+      postComment(comment)
+        .then((res) => {
+          this.comment = "";
+          this.getComments();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    getComments() {
+      getCommentPost(this.post._id)
+        .then((res) => {
+          this.comments = res.data.comment;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
