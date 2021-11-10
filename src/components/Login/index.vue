@@ -54,8 +54,11 @@ export default {
         .then((res) => {
           let token = res.data.token;
           let infoToken = jwt_decode(token);
+          console.log(infoToken);
           setToken(token);
-          setUsername(infoToken.nickname);
+          console.log(token);
+          setUsername({ ...infoToken });
+
           this.loading = false;
           window.location.reload();
         })

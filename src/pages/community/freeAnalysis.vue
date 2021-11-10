@@ -1,18 +1,27 @@
 <template>
   <div>
-    <post v-if="editing" @info-data="handleSend" />
+    <posts
+      v-if="editing && !comtShow"
+      @cancel="handleCancelForm"
+      @info-data="handleSend"
+    />
 
-    <div v-if="!editing" class="match">
+    <div v-if="!editing && !comtShow" class="match">
       <table>
         <thead>
-          <th class="text-left">Number</th>
+          <th class="text-left" width="25">N°</th>
           <th class="text-left" witdh="50">Title</th>
-          <th class="text-center">name</th>
+          <th class="text-left">name</th>
           <th class="text-center">date</th>
           <th class="text-center">View</th>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in posts" :key="index">
+          <tr
+            v-for="(item, index) in posts"
+            :key="index"
+            style="cursor:pointer;"
+            @click="handleSelected(item)"
+          >
             <td>{{ ++index }}</td>
             <td class="text-left">{{ item.title }}</td>
             <td class="text-left">{{ item.author.name }}</td>
@@ -22,22 +31,39 @@
         </tbody>
       </table>
     </div>
-    <button v-if="!editing" @click="handlePost">
+    <button v-if="!editing && existToken && !comtShow" @click="handlePost">
       <i class="fa fa-edit"></i> New post
     </button>
+    <Comment @next="handleNext" v-if="comtShow" :post="post" />
   </div>
 </template>
 
 <script>
-import Post from "@/components/form/Post.vue";
+import Posts from "@/components/form/Post.vue";
 import { listPostCommunity, savePostCommunity } from "@/api/post";
+import { getToken, getUsername } from "@/utils/storage";
+import { parseTime } from "@/Filters";
+import Comment from "@/components/form/PostDetails.vue";
 export default {
-  components: { Post },
+  components: { Posts, Comment },
+  filters: {
+    dateFormat: parseTime,
+  },
   data() {
     return {
       editing: false,
       posts: [],
+      post: "",
+      comtShow: false,
     };
+  },
+  computed: {
+    existToken() {
+      if (getToken() !== undefined) {
+        return true;
+      }
+      return false;
+    },
   },
   mounted() {
     this.getPosts();
@@ -47,21 +73,39 @@ export default {
       this.editing = true;
     },
     handleSend(e) {
-      console.log(e);
-
       let post = {
-        author: "61891cc7bb3f8cb6b9a4a302",
+        author: e.author,
         title: e.title,
         text: e.text,
         tag: e.tag,
         category: "test category",
       };
-      savePostCommunity(post).then((res) => {});
+      savePostCommunity(post)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      this.getPosts();
+      this.editing = false;
     },
     getPosts() {
       listPostCommunity().then((res) => {
         this.posts = res.data.posts;
       });
+    },
+    handleSelected(item) {
+      this.post = { ...item };
+      this.comtShow = true;
+    },
+    handleCancelForm(e) {
+      console.log(e);
+      this.editing = false;
+    },
+    handleNext() {
+      this.comtShow = false;
+      this.editing = false;
     },
   },
 };

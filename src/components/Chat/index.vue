@@ -7,9 +7,6 @@ import { uchatData } from "@/utils";
 export default {
   components: {},
   created() {
-    let script = document.createElement('script');
-    script.src = 'http://client.uchat.io/uchat.js';
-    document.getElementsByTagName('head')[0].appendChild(script)
   },
   mounted() {
     this.$nextTick(function() {

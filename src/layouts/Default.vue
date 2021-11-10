@@ -104,6 +104,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+
   /*background-color: #212c4f;*/
   background-color: #141414;
   box-sizing: border-box;
@@ -264,7 +265,7 @@ button {
   height: 45px;
   font-size: 0.875rem;
   color: #ffffff;
-  padding: 10px 34px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 .col-2 {

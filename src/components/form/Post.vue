@@ -28,8 +28,12 @@ import Ckeditor from '@/components/ckeditor';
       ></ckeditor>
     </div>
     <div class="group-button">
-      <button class="send" @click="handleSend">Send</button>
-      <button class="cancel">Cancel</button>
+      <button class="send" @click="handleSend">
+        <i style="margin-right:6px" class="fa fa-send"></i>Send
+      </button>
+      <button @click="handleCancel" class="cancel">
+        <i style="margin-right:6px" class="fa fa-close"></i>Cancel
+      </button>
     </div>
   </div>
 </template>
@@ -37,9 +41,14 @@ import Ckeditor from '@/components/ckeditor';
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import ko from "@ckeditor/ckeditor5-build-classic/build/translations/fr";
-
+import { getUsername } from "@/utils/storage";
 export default {
   components: {},
+  computed: {
+    user() {
+      return JSON.parse(getUsername());
+    },
+  },
   data() {
     return {
       editor: ClassicEditor,
@@ -55,10 +64,15 @@ export default {
   methods: {
     handleSend() {
       this.$emit("info-data", {
+        author: this.user.userId,
         title: this.title,
         text: this.editorData,
         tag: this.tag,
       });
+    },
+    handleCancel() {
+      console.log("cancle");
+      this.$emit("cancel", true);
     },
   },
 };
