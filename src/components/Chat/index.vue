@@ -6,9 +6,15 @@
 import { uchatData } from "@/utils";
 export default {
   components: {},
+  data() {
+    return {};
+  },
   created() {
     var self = this;
-    self.$nextTick(function() {
+    self.$nextTick(function() {});
+  },
+  mounted() {
+    this.$nextTick(function() {
       let recaptchaScript = document.createElement("script");
       recaptchaScript.setAttribute("src", "//client.uchat.io/uchat.js");
       document.head.appendChild(recaptchaScript);
@@ -19,9 +25,6 @@ export default {
 
       document.getElementById("uchat").appendChild(uchat);
     });
-  },
-  mounted() {
-    this.$nextTick(function() {});
   },
   data() {
     return {
