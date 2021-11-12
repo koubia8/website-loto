@@ -14,7 +14,12 @@ export function savePostCommunity(data) {
     data,
   });
 }
-
+export function saveView(id) {
+  return request({
+    url: `posts/views/${id}`,
+    method: "put",
+  });
+}
 export function postComment(data) {
   return request({
     url: "/comments",

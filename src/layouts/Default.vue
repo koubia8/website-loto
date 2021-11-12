@@ -76,19 +76,18 @@ export default {
       token: false,
       componentKey: 0,
       renderComponent: true,
-
     };
   },
   mounted() {
-    this.forceRerender()
-    console.log(this.componentKey)
+    this.forceRerender();
+    console.log(this.componentKey);
   },
   methods: {
-    forceRerender () {
-      console.log('rerendering')
+    forceRerender() {
+      console.log("rerendering");
       this.componentKey++;
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

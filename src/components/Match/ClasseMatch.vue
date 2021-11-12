@@ -72,6 +72,7 @@ export default {
     getData() {
       getAllMatch().then((response) => {
         this.matchs = response.data;
+        console.log(this.matchs);
         let data = response.data;
         data.map((item) => {
           this.country.push(item.name);
@@ -148,11 +149,11 @@ export default {
     frameborder="0"
     width="100%"
     height="710px"
-  ></iframe>-->
+  ></iframe>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped></style>-->
