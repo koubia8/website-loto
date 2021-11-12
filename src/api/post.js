@@ -1,8 +1,8 @@
 import request from "@/utils/request";
 
-export function listPostCommunity() {
+export function listPostCommunity(categoryId) {
   return request({
-    url: "/posts",
+    url: `/posts/category/${categoryId}`,
     method: "get",
   });
 }

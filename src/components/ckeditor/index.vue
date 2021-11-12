@@ -9,25 +9,27 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import CKEditor from "@ckeditor/ckeditor5-vue2";
-import "@ckeditor/ckeditor5-build-classic/build/translations/de";
+let ClassicEditor
+let ko
+if (process.isClient) {
+  ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
+  ko = require('@ckeditor/ckeditor5-build-classic/build/translations/fr')
+}
 
 export default {
   name: "app",
-  components: {
-    ckeditor: CKEditor.component,
-  },
   data() {
     return {
       editor: ClassicEditor,
       editorData: "",
       editorConfig: {
         // The configuration of the editor.
-        language: "de",
+        language: ko,
       },
     };
   },
+  mounted() {
+  }
 };
 </script>
 

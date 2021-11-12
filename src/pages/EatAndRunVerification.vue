@@ -9,17 +9,23 @@
           >{{ menu.name }}</a>
         </li>
       </ul>
+      <eat-and-run v-if="menuSelect === 'eat-and-run'" />
+      <eating-site v-if="menuSelect === 'eating-site'" />
     </div>
   </Layout>
 </template>
 
 <script>
+import EatAndRun from "./eat-an-run/eatAndRun";
+import EatingSite from "./eat-an-run/eatingSite";
 
 export default {
   metaInfo: {
     title: "Eat and run verification",
   },
   components: {
+    EatAndRun,
+    EatingSite
   },
   data() {
     return {

@@ -19,7 +19,7 @@
 
       <g-link class="nav__link" to="/community/">Community</g-link>
       <g-link class="nav__link" to="/#sc">Customer center</g-link>
-      <g-link class="nav__link" to="/#att">Attendance</g-link>
+      <g-link class="nav__link" to="/vod-tube">VOD tube</g-link>
       <g-link class="nav__link" to="/virtual-soccer/"
         >Virtual sports analysis</g-link
       >

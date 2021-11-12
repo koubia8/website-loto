@@ -16,13 +16,16 @@
         <ul class="post-nav-item">
           <li><i class="fa fa-comment-o"></i> 0</li>
           <li><i class="fa fa-eye"></i> {{ post.views }}</li>
-          <li><i class="fa fa-clock-o"></i> {{ post.createdAt }}</li>
+          <li><i class="fa fa-clock-o"></i> {{ post.createdAt | formatDate }}</li>
         </ul>
       </div>
     </div>
     <div class="post-body" v-html="post.text"></div>
     <div class="comment">
-      <div class="comment-input">
+      <div
+        v-if="existToken"
+        class="comment-input"
+      >
         <input
           style="width:100%;height:70px;"
           required
@@ -44,14 +47,26 @@
 
 <script>
 import { postComment, getCommentPost } from "@/api/post";
-import { getUsername } from "@/utils/storage";
+import { getToken, getUsername } from "@/utils/storage";
+import moment from 'moment';
 export default {
   props: {
     post: Object,
   },
+  filters: {
+    formatDate (value) {
+      moment.locale('en')
+      if (value) {
+        return moment(String(value)).format('LLL')
+      }
+    },
+  },
   computed: {
     user() {
       return JSON.parse(getUsername());
+    },
+    existToken() {
+      return getToken() !== undefined;
     },
   },
   data() {

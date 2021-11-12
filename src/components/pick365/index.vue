@@ -14,8 +14,6 @@
 <script>
 export default {
   mounted() {
-    var doc = document.getElementById("pick");
-    doc.style.display = "none";
   },
 };
 </script>

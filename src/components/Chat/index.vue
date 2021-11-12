@@ -1,17 +1,12 @@
 <template>
   <div id="uchat"></div>
 </template>
-<script async :src="{ url }"></script>
+<!--<script async :src="{ url }"></script>-->
 <script>
 import { uchatData } from "@/utils";
 export default {
   components: {},
-  data() {
-    return {};
-  },
   created() {
-    var self = this;
-    self.$nextTick(function() {});
   },
   mounted() {
     this.$nextTick(function() {
