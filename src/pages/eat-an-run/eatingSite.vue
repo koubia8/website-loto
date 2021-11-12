@@ -9,11 +9,11 @@
     <div v-if="!editing && !comtShow" class="match">
       <table>
         <thead>
-          <th class="text-left" width="25">N°</th>
-          <th class="text-left" witdh="50">Title</th>
-          <th class="text-left">name</th>
-          <th class="text-center">date</th>
-          <th class="text-center">View</th>
+        <th class="text-left" width="25">N°</th>
+        <th class="text-left" witdh="50">Title</th>
+        <th class="text-left">name</th>
+        <th class="text-center">date</th>
+        <th class="text-center">View</th>
         </thead>
         <tbody>
         <tr
@@ -46,7 +46,7 @@ import { parseTime } from "@/Filters";
 import Comment from "@/components/form/PostDetails.vue";
 import moment from 'moment';
 export default {
-  name: 'Baseball',
+  name: 'Eating site',
   components: { Posts, Comment },
   filters: {
     dateFormat: parseTime,
@@ -63,7 +63,7 @@ export default {
       posts: [],
       post: "",
       comtShow: false,
-      categoryId: "baseball"
+      categoryId: "eating-site"
     };
   },
   computed: {

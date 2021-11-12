@@ -3,7 +3,7 @@
     <div class="home-content">
       <div id="iframe-div">
         <iframe
-          src="http://localhost:3003/proxy-server?url=copytoon220.com/%EC%9B%B9%ED%88%B0"
+          src="http://localhost:3003/webtoon?url=https://copytoon220.com/%EC%9B%B9%ED%88%B0"
           id="iframe-content"
           allowFullScreen
           width="100%"

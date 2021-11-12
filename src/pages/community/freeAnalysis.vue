@@ -25,7 +25,7 @@
             <td>{{ ++index }}</td>
             <td class="text-left">{{ item.title }}</td>
             <td class="text-left">{{ item.author.name }}</td>
-            <td class="text-center">{{ item.createdAt }}</td>
+            <td class="text-center">{{ item.createdAt | formatDate }}</td>
             <td class="text-center">{{ item.views }}</td>
           </tr>
         </tbody>
@@ -44,10 +44,18 @@ import { listPostCommunity, savePostCommunity } from "@/api/post";
 import { getToken, getUsername } from "@/utils/storage";
 import { parseTime } from "@/Filters";
 import Comment from "@/components/form/PostDetails.vue";
+import moment from 'moment';
 export default {
+  name: 'Free Analysis',
   components: { Posts, Comment },
   filters: {
     dateFormat: parseTime,
+    formatDate (value) {
+      moment.locale('en')
+      if (value) {
+        return moment(String(value)).format('LLL')
+      }
+    },
   },
   data() {
     return {
@@ -55,6 +63,7 @@ export default {
       posts: [],
       post: "",
       comtShow: false,
+      categoryId: "free-analysis"
     };
   },
   computed: {
@@ -78,7 +87,7 @@ export default {
         title: e.title,
         text: e.text,
         tag: e.tag,
-        category: "test category",
+        category: this.categoryId,
       };
       savePostCommunity(post)
         .then((res) => {
@@ -91,7 +100,7 @@ export default {
       this.editing = false;
     },
     getPosts() {
-      listPostCommunity().then((res) => {
+      listPostCommunity(this.categoryId).then((res) => {
         this.posts = res.data.posts;
       });
     },

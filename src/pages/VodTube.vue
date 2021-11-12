@@ -9,50 +9,50 @@
           >{{ menu.name }}</a>
         </li>
       </ul>
-      <basketball v-if="menuSelect === 'basketball'" />
-      <soccer v-if="menuSelect === 'soccer'" />
-      <volleyball v-if="menuSelect === 'volleyball'" />
-      <baseball v-if="menuSelect === 'baseball'" />
+      <movie v-if="menuSelect ==='movie'" />
+      <drama v-if="menuSelect ==='drama'" />
+      <entertainment v-if="menuSelect === 'entertainment'" />
+      <documentary v-if="menuSelect === 'documentary'" />
     </div>
   </Layout>
 </template>
 
 <script>
-import Basketball from './sport-analysis/basketball'
-import Soccer from './sport-analysis/soccer'
-import Volleyball from './sport-analysis/volleyball'
-import Baseball from './sport-analysis/baseball'
+import Movie from './vod-tube/movie';
+import Drama from './vod-tube/drama';
+import Entertainment from './vod-tube/entertainment';
+import Documentary from  './vod-tube/documentary';
 
 export default {
   metaInfo: {
-    title: "Sport Analysis",
+    title: "VOD Tube",
   },
   components: {
-    Basketball,
-    Soccer,
-    Volleyball,
-    Baseball
+    Movie,
+    Drama,
+    Entertainment,
+    Documentary
   },
   data() {
     return {
-      menuSelect: "basketball",
+      menuSelect: "movie",
       menu: [
         {
-          key: "basketball",
-          name: "Basketball",
+          key: "movie",
+          name: "Movie",
         },
         {
-          key: "soccer",
-          name: "Soccer",
+          key: "drama",
+          name: "Drama",
         },
         {
-          key: "baseball",
-          name: "Baseball",
+          key: "entertainment",
+          name: "Entertainment",
         },
         {
-          key: "volleyball",
-          name: "Volleyball",
-        },
+          key: "documentary",
+          name: "Documentary",
+        }
       ],
     };
   },

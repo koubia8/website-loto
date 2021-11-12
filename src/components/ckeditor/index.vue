@@ -9,8 +9,12 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import ko from "@ckeditor/ckeditor5-build-classic/build/translations/fr";
+let ClassicEditor
+let ko
+if (process.isClient) {
+  ClassicEditor = require('@ckeditor/ckeditor5-build-classic')
+  ko = require('@ckeditor/ckeditor5-build-classic/build/translations/fr')
+}
 
 export default {
   name: "app",
@@ -24,6 +28,8 @@ export default {
       },
     };
   },
+  mounted() {
+  }
 };
 </script>
 

@@ -1,4 +1,3 @@
-import Ckeditor from '@/components/ckeditor';
 <template>
   <div class="post">
     <div class="avatar">
@@ -16,8 +15,8 @@ import Ckeditor from '@/components/ckeditor';
       </div>
     </div>
     <div class="title">
-      <input type="text" v-model="title" placeholder="Title" name="" id="" />
-      <input type="text" v-model="tag" placeholder="Tag" name="" id="" />
+      <input type="text" v-model="title" placeholder="Title" name="title" />
+      <input type="text" v-model="tag" placeholder="Tag" name="tag" />
     </div>
 
     <div class="ckeditor">
@@ -39,11 +38,24 @@ import Ckeditor from '@/components/ckeditor';
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import ko from "@ckeditor/ckeditor5-build-classic/build/translations/fr";
+/*
+let ClassicEditor;
+let ko
+if (process.isClient) {
+  ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
+  ko = require('@ckeditor/ckeditor5-build-classic/build/translations/fr');
+}
+*/
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+import CKEditor from '@ckeditor/ckeditor5-vue2'
+import ko from '@ckeditor/ckeditor5-build-classic/build/translations/fr'
+import ImageUploader from '../../utils/imageUploader';
+
 import { getUsername } from "@/utils/storage";
 export default {
-  components: {},
+  components: {
+    ckeditor: CKEditor.component
+  },
   computed: {
     user() {
       return JSON.parse(getUsername());
@@ -58,10 +70,27 @@ export default {
       editorConfig: {
         // The configuration of the editor.
         language: ko,
+        extraPlugins: [ this.uploader ]
       },
     };
   },
+  watch: {
+    editorData: {
+      immediate: true,
+      handler (val) {
+        console.log(val)
+      },
+    },
+  },
+  mounted() {
+    console.log(ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName))
+  },
   methods: {
+    uploader (editor) {
+      editor.plugins.get('FileRepository').createUploadAdapter = ( loader ) => {
+        return new ImageUploader( loader );
+      }
+    },
     handleSend() {
       this.$emit("info-data", {
         author: this.user.userId,
@@ -106,7 +135,10 @@ export default {
   line-height: 40px;
 }
 .post {
-
+}
+#toolbar-container {
+  color: #ffb800;
+  background-color: #1a1a1a;
 }
 .post input {
   width: 100%;

@@ -10,39 +10,49 @@
           >
         </li>
       </ul>
-      <free-analysis />
+      <free-analysis v-if="menuSelect === 'free-analysis'" />
+      <humor-story v-if="menuSelect === 'humor-story'" />
+      <hot-picture v-if="menuSelect === 'hot-picture'" />
+      <sports-video v-if="menuSelect === 'sports-video'" />
     </div>
   </Layout>
 </template>
 
 <script>
-import FreeAnalysis from "./community/freeAnalysis.vue";
+import FreeAnalysis from "./community/freeAnalysis";
+import HumorStory from "./community/humorStory";
+import HotPicture from "./community/hotPicture";
+import SportsVideo from "./community/sportsVideo";
+
 export default {
   metaInfo: {
     title: "community",
   },
   components: {
     FreeAnalysis,
+    HumorStory,
+    HotPicture,
+    SportsVideo
   },
   data() {
     return {
-      menuSelect: "temporary-1",
+      menuSelect: "free-analysis",
       menu: [
         {
-          key: "Free-Analysis",
-          name: "Free Analysis",
+          key: "free-analysis",
+          name: "Free analysis & pick",
         },
         {
-          key: "temporary-2",
-          name: "Temporary 2",
+          key: "humor-story",
+          name: "Humor & story",
         },
         {
-          key: "temporary-3",
-          name: "Temporary 3",
+          key: "hot-picture",
+          name: "Hot picture",
         },
         {
-          key: "temporary-4",
-          name: "Temporary 4",
+          key: "sports-video",
+          name: "Sports video",
         },
       ],
     };
