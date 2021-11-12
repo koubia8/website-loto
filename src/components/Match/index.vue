@@ -7,7 +7,7 @@
       sandbox="allow-same-origin allow-scripts"
       allowfullscreen
       width="1024"
-      height="1500px"
+      height="1600px"
       frameborder="0"
     ></iframe>
   </div>
@@ -24,7 +24,7 @@ export default {
   margin-top: 30px;
   vertical-align: middle;
   width: 100%;
-  height: 3800px;
+  height: 4070px;
   overflow: hidden;
   position: relative;
 }
