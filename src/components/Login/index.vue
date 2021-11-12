@@ -22,7 +22,7 @@
       <label for="souvient">Me souvenir</label>
     </div>
     <div class="register">
-      <a>S'inscrire</a>
+      <g-link class="nav__link" to="/register">S'inscrire</g-link>
       <a>Mot de passe oublié</a>
     </div>
   </div>
@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 .checkbox-box {
   display: flex;
@@ -90,6 +90,9 @@ export default {
 }
 .register a {
   cursor: pointer;
+}
+.register {
+  text-decoration: none;
 }
 .login {
   display: flex;
