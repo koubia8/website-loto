@@ -3,7 +3,7 @@ import { getToken } from "@/utils/storage";
 // creation du service axios instance
 
 const service = axios.create({
-  baseURL: "http://localhost:3003/",
+  baseURL: "http://139.59.251.142:3000/",
   timeout: 40000,
 });
 

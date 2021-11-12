@@ -16,16 +16,15 @@
         <ul class="post-nav-item">
           <li><i class="fa fa-comment-o"></i> 0</li>
           <li><i class="fa fa-eye"></i> {{ post.views }}</li>
-          <li><i class="fa fa-clock-o"></i> {{ post.createdAt | formatDate }}</li>
+          <li>
+            <i class="fa fa-clock-o"></i> {{ post.createdAt | formatDate }}
+          </li>
         </ul>
       </div>
     </div>
     <div class="post-body" v-html="post.text"></div>
     <div class="comment">
-      <div
-        v-if="existToken"
-        class="comment-input"
-      >
+      <div v-if="existToken" class="comment-input">
         <input
           style="width:100%;height:70px;"
           required
@@ -46,18 +45,18 @@
 </template>
 
 <script>
-import { postComment, getCommentPost } from "@/api/post";
+import { postComment, getCommentPost, saveView } from "@/api/post";
 import { getToken, getUsername } from "@/utils/storage";
-import moment from 'moment';
+import moment from "moment";
 export default {
   props: {
     post: Object,
   },
   filters: {
-    formatDate (value) {
-      moment.locale('en')
+    formatDate(value) {
+      moment.locale("en");
       if (value) {
-        return moment(String(value)).format('LLL')
+        return moment(String(value)).format("LLL");
       }
     },
   },
@@ -69,6 +68,7 @@ export default {
       return getToken() !== undefined;
     },
   },
+
   data() {
     return {
       comment: "",
@@ -77,6 +77,7 @@ export default {
   },
   mounted() {
     this.getComments();
+    this.saveView();
   },
   methods: {
     handleNext() {
@@ -105,6 +106,15 @@ export default {
         })
         .catch((err) => {
           console.log(err);
+        });
+    },
+    saveView() {
+      saveView(this.post._id)
+        .then((res) => {
+          this.post.views += 1;
+        })
+        .catch((err) => {
+          console.log("hello");
         });
     },
   },

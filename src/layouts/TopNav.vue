@@ -35,7 +35,9 @@
     <ul class="right" v-if="!isToken">
       <li>Connexion</li>
       <li>|</li>
-      <li>Inscription</li>
+      <li>
+        <g-link class="nav__link" to="/register">Inscription</g-link>
+      </li>
       <li>|</li>
       <li>Contact</li>
     </ul>
