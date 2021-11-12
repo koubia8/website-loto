@@ -76,14 +76,13 @@ export default {
   },
   watch: {
     editorData: {
-      immediate: true,
       handler (val) {
         console.log(val)
       },
     },
   },
   mounted() {
-    console.log(ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName))
+    // console.log(ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName))
   },
   methods: {
     uploader (editor) {

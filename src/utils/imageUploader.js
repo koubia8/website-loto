@@ -26,7 +26,7 @@ class ImageUploader {
     // integration to choose the right communication channel. This example uses
     // a POST request with JSON as a data structure but your configuration
     // could be different.
-    xhr.open( 'POST', 'http://example.com/image/upload/path', true );
+    xhr.open( 'POST', 'http://localhost:3003/medias', true );
     xhr.responseType = 'json';
   }
 

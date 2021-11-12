@@ -46,7 +46,7 @@ import { parseTime } from "@/Filters";
 import Comment from "@/components/form/PostDetails.vue";
 import moment from 'moment';
 export default {
-  name: 'Hot picture',
+  name: 'HotPicture',
   components: { Posts, Comment },
   filters: {
     dateFormat: parseTime,
