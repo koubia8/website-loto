@@ -9,7 +9,6 @@
           scrolling="no"
           allowFullScreen
           width="1024" height="3500"
-          style="-webkit-transform:scale(1.19);-moz-transform-scale(0.5);"
         ></iframe>
       </div>
     </div>
@@ -47,14 +46,49 @@ export default {
   overflow: hidden;
   position: relative;
 }
-#iframe-content {
-  position: absolute;
-  top: -160px;
-  left: -468px;
-  right: -100px;
-  width: 1450px;
-  height: 2250px;
-  background-color: #fff;
+@media only screen and (min-width: 1800px) {
+  #iframe-content {
+    position: absolute;
+    top: -380px;
+    left: -945px;
+    width: 2000px;
+    height: 2000px;
+    background-color: #fff;
+  }
+  #iframe-content {
+    zoom: 1.2;
+    -moz-transform: scale(1.2);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(1.2);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(1.2);
+    -webkit-transform-origin: 0 0;
+  }
+}
+@media only screen and (max-width: 1800px) {
+  #iframe-content {
+    position: absolute;
+    top: -350px;
+    left: -750px;
+    right: -100px;
+    width: 1800px;
+    height: 2000px;
+    background-color: #fff;
+  }
+  #iframe-content {
+    zoom: 1.1;
+    -moz-transform: scale(1.1);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(1.1);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(1.1);
+    -webkit-transform-origin: 0 0;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #iframe-content {
+    zoom: 2;
+  }
 }
 ul {
   list-style-type: none;
