@@ -10,17 +10,21 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import ko from "@ckeditor/ckeditor5-build-classic/build/translations/fr";
+import CKEditor from "@ckeditor/ckeditor5-vue2";
+import "@ckeditor/ckeditor5-build-classic/build/translations/de";
 
 export default {
   name: "app",
+  components: {
+    ckeditor: CKEditor.component,
+  },
   data() {
     return {
       editor: ClassicEditor,
       editorData: "",
       editorConfig: {
         // The configuration of the editor.
-        language: ko,
+        language: "de",
       },
     };
   },

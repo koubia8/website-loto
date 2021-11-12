@@ -76,8 +76,8 @@ export default {
       };
       postComment(comment)
         .then((res) => {
-          this.comment = "";
           this.getComments();
+          this.comment = "";
         })
         .catch((err) => {
           console.log(err);

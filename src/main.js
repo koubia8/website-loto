@@ -3,11 +3,8 @@
 
 import DefaultLayout from "~/layouts/Default.vue";
 
-import CKEditor from "@ckeditor/ckeditor5-vue2";
-
 export default function(Vue, { router, head, isClient, appOptions }) {
   // vuex
-  Vue.use(CKEditor);
 
   // Set default layout as a global component
   if (isClient) {
