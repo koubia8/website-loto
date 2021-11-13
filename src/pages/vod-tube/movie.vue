@@ -22,7 +22,7 @@
           <span style="font-size:16px;color:#ccc">{{ post.title }}</span>
 
           <div class="movie_desc">
-            <p class="text" v-html="post.text"></p>
+            <!-- <div class="text" v-html="post.text"></div> -->
             <ul class="post-nav-item">
               <li><i class="fa fa-user"></i> {{ post.author.nickname }}</li>
               <li><i class="fa fa-eye"></i> {{ post.views }}</li>
