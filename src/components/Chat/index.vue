@@ -9,17 +9,19 @@ export default {
   created() {
   },
   mounted() {
-    this.$nextTick(function() {
-      let recaptchaScript = document.createElement("script");
-      recaptchaScript.setAttribute("src", "//client.uchat.io/uchat.js");
-      document.head.appendChild(recaptchaScript);
-      let uchat = document.createElement("u-chat");
-      uchat.setAttribute("room", "sport-tv");
-      uchat.setAttribute("style", " width:100%; height:100%;");
-      uchat.setAttribute("user_data", uchatData());
+    if (process.isClient) {
+      this.$nextTick(function() {
+        let recaptchaScript = document.createElement("script");
+        recaptchaScript.setAttribute("src", "//client.uchat.io/uchat.js");
+        document.head.appendChild(recaptchaScript);
+        let uchat = document.createElement("u-chat");
+        uchat.setAttribute("room", "sport-tv");
+        uchat.setAttribute("style", " width:100%; height:100%;");
+        uchat.setAttribute("user_data", uchatData());
 
-      document.getElementById("uchat").appendChild(uchat);
-    });
+        document.getElementById("uchat").appendChild(uchat);
+      });
+    }
   },
   data() {
     return {
