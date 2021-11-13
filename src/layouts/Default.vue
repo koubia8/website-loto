@@ -46,7 +46,9 @@ import Heroe from "./components/Heroe";
 import Login from "@/components/Login";
 import ClasseWorld from "@/components/Match/ClasseWorld.vue";
 import ClasseMatch from "@/components/Match/ClasseMatch.vue";
+
 import Chat from "@/components/Chat";
+
 import Profile from "../components/Login/Profile.vue";
 import { getToken } from "@/utils/storage";
 export default {
@@ -62,7 +64,6 @@ export default {
   },
   computed: {
     isToken() {
-      console.log(getToken());
       if (getToken() !== undefined) {
         return true;
       } else {
@@ -103,7 +104,6 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-
   /*background-color: #212c4f;*/
   background-color: #141414;
   box-sizing: border-box;

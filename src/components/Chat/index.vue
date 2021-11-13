@@ -1,13 +1,12 @@
 <template>
-  <div id="uchat"></div>
+  <div id="uchat" v-html="uchat.outerHTML"></div>
 </template>
 <!--<script async :src="{ url }"></script>-->
 <script>
 import { uchatData } from "@/utils";
 export default {
   components: {},
-  created() {
-  },
+  created() {},
   mounted() {
     this.$nextTick(function() {
       let recaptchaScript = document.createElement("script");
@@ -18,12 +17,14 @@ export default {
       uchat.setAttribute("style", " width:100%; height:100%;");
       uchat.setAttribute("user_data", uchatData());
 
-      document.getElementById("uchat").appendChild(uchat);
+      this.uchat = uchat;
+      console.log(this.uchat);
     });
   },
   data() {
     return {
       loaded: false,
+      uchat: null,
       url: "http://client.uchat.io/uchat.js",
     };
   },
