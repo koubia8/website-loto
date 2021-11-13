@@ -46,15 +46,17 @@ if (process.isClient) {
   ko = require('@ckeditor/ckeditor5-build-classic/build/translations/fr');
 }
 */
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import CKEditor from '@ckeditor/ckeditor5-vue2'
-import ko from '@ckeditor/ckeditor5-build-classic/build/translations/fr'
-import ImageUploader from '../../utils/imageUploader';
+
+let ClassicEditor, ko, ImageUploader;
+if (process.isClient) {
+  ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
+  ko = require('@ckeditor/ckeditor5-build-classic/build/translations/fr');
+  ImageUploader = require('../../utils/imageUploader');
+}
 
 import { getUsername } from "@/utils/storage";
 export default {
   components: {
-    ckeditor: CKEditor.component
   },
   computed: {
     user() {
