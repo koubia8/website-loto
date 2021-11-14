@@ -4,7 +4,7 @@
       <div class="avatar">
         <img src="@/assets/guest.gif" />
       </div>
-      <div class="username">{{ user.name }}</div>
+      <div class="username">{{ (user && user.name) ? user.name : 'Guest' }}</div>
     </div>
     <!-- <a>
       déconnexion
@@ -32,7 +32,9 @@ export default {
   name: "Profile",
   computed: {
     user() {
-      return JSON.parse(getUsername());
+      if (getUsername() && Object.keys(getUsername()).length) {
+        return JSON.parse(getUsername());
+      }
     },
   },
   methods: {},

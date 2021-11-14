@@ -8,7 +8,7 @@ export function uppercaseFirst(string) {
 export function upperCase(string) {
   return string.toUpperCase();
 }
-const user = getUsername() !== undefined ? JSON.parse(getUsername()) : "guest";
+const user = (getUsername() && getUsername() !== undefined) ? JSON.parse(getUsername()) : "guest";
 
 export function uchatData() {
   let time = Date.now();

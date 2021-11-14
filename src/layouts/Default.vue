@@ -3,18 +3,13 @@
     <div class="layout">
       <header-nav> </header-nav>
 
-      <div class="main">
-        <div class="sidebar-left">
-          <Login v-if="!isToken" />
-          <Profile v-if="isToken" />
-          <div>
-            <Chat :key="componentKey" />
-          </div>
-        </div>
-        <slot />
-        <div class="sidebar-right">
-          <ClasseWorld />
-          <ClasseMatch />
+
+    <div class="main">
+      <div class="sidebar-left">
+        <Login v-show="!isToken" />
+        <Profile v-show="isToken" />
+        <div>
+          <Chat />
         </div>
       </div>
       <div class="footer">
@@ -81,14 +76,8 @@ export default {
     };
   },
   mounted() {
-    this.forceRerender();
-    console.log(this.componentKey);
   },
   methods: {
-    forceRerender() {
-      console.log("rerendering");
-      this.componentKey++;
-    },
   },
 };
 </script>

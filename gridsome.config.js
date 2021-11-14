@@ -8,4 +8,8 @@ module.exports = {
   siteName: "SPORT IS LIVE",
   plugins: [
   ],
+  chainWebpack (config)
+  {
+    config.mode('development')
+  }
 };

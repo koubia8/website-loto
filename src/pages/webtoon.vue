@@ -6,8 +6,10 @@
           src="http://139.59.251.142:3000/webtoon?url=https://copytoon221.com/%EC%9B%B9%ED%88%B0"
           id="iframe-content"
           allowFullScreen
+          sandbox="allow-same-origin allow-scripts"
           width="1028"
           height="15500px"
+          @load="loadedIframe"
         ></iframe>
       </div>
     </div>
@@ -25,9 +27,29 @@ export default {
   data() {
     return {};
   },
+  computed: {
+  },
+  watch: {
+  },
   async mounted() {
   },
-  methods: {},
+  methods: {
+    loadedIframe () {
+      console.log('load detected!')
+      let frame = document.getElementById('iframe-content');
+      frame.contentWindow.postMessage('', 'https://copytoon221.com/%EC%9B%B9%ED%88%B0')
+      window.addEventListener('message', event => {
+        if (event.origin.startsWith('http://localhost:8080')) {
+          // let element = iframe.contentDocument.querySelector('#thema_wrapper > div.at-body > div > div > div.col-md-9 > div.row.w_banner');
+          console.log({iframe: frame, contentWindow: frame.contentWindow.document.querySelector('.row.w_banner')})
+          console.log(event.data)
+        } else {
+          return
+        }
+      })
+      console.log('Finished loading')
+    }
+  },
 };
 </script>
 
