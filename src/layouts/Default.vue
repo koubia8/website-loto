@@ -4,10 +4,10 @@
 
     <div class="main">
       <div class="sidebar-left">
-        <Login v-if="!isToken" />
-        <Profile v-if="isToken" />
+        <Login v-show="!isToken" />
+        <Profile v-show="isToken" />
         <div>
-          <Chat :key="componentKey" />
+          <Chat />
         </div>
       </div>
       <slot />
@@ -80,14 +80,8 @@ export default {
     };
   },
   mounted() {
-    this.forceRerender();
-    console.log(this.componentKey);
   },
   methods: {
-    forceRerender() {
-      console.log("rerendering");
-      this.componentKey++;
-    },
   },
 };
 </script>

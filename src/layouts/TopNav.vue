@@ -16,10 +16,10 @@
 
       <span>Accueil</span>
     </div>
-    <ul class="right" v-if="isToken">
+    <ul class="right" v-show="isToken">
       <li class="username ">
         <img src="@/assets/guest.gif" />
-        <span>{{ user.name }}</span>
+        <span>{{ (user && user.name) ? user.name : 'Guest' }}</span>
       </li>
       <li>|</li>
       <li class="mapage border-left">
@@ -32,7 +32,7 @@
         <logout />
       </li>
     </ul>
-    <ul class="right" v-if="!isToken">
+    <ul class="right" v-show="!isToken">
       <li>Connexion</li>
       <li>|</li>
       <li>
@@ -59,7 +59,9 @@ export default {
   },
   computed: {
     user() {
-      return JSON.parse(getUsername());
+      if (getUsername() && Object.keys(getUsername()).length) {
+        return JSON.parse(getUsername());
+      }
     },
     isToken() {
       if (getToken() !== undefined) {

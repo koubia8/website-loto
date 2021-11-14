@@ -4,17 +4,15 @@
       type="email"
       name=""
       v-model="login.email"
-      id=""
       placeholder="Username"
     />
     <input
       type="password"
       name=""
       v-model="login.password"
-      id=""
       placeholder="Password"
     />
-    <button @click="handleLogin">
+    <button @click.prevent="handleLogin">
       <i v-if="loading" class="fa fa-spinner fa-spin"></i> Connexion
     </button>
     <div class="checkbox-box">
@@ -60,7 +58,7 @@ export default {
           setUsername({ ...infoToken });
 
           this.loading = false;
-          window.location.reload();
+          window.location.reload()
         })
         .catch((err) => {
           console.log(err);

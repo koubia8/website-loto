@@ -24,7 +24,7 @@
     </div>
     <div class="post-body" v-html="post.text"></div>
     <div class="comment">
-      <div v-if="existToken" class="comment-input">
+      <div v-show="existToken" class="comment-input">
         <input
           style="width:100%;height:70px;"
           required
