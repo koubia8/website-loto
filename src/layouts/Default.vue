@@ -67,7 +67,6 @@ export default {
       if (getToken() !== undefined) {
         return true;
       } else {
-        console.log("false");
         return false;
       }
     },
