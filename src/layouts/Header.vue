@@ -3,7 +3,17 @@
     <top-nav />
     <div class="heroe">
       <img height="160" src="@/assets/logo2.png" class="logo" />
-      <div class="socialMedia"></div>
+      <div class="socialMedia">
+        <a href="#" class="item">
+          <img src="@/assets/youtube.png" class="logo" /> YouTube
+        </a>
+        <a href="#" class="item">
+          <img src="@/assets/facebook.png" class="logo" /> Community FB
+        </a>
+        <a href="#" class="item">
+          <img src="@/assets/twitch.png" class="logo" /> Twitch
+        </a>
+      </div>
     </div>
     <div class="slide">
       <TextSlide />
@@ -60,7 +70,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
   margin: 0 auto;
 
@@ -70,7 +80,7 @@ export default {
 
 .heroe {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 80px;
@@ -81,10 +91,25 @@ export default {
   font-style: normal;
   font-weight: 900;
   background: url("../assets/top-bg.svg");
-  color: #00ff00;
 
   -webkit-text-stroke: 2px
     linear-gradient(89.88deg, #00ff00 11.86%, #00ff00 53.48%, #1a2151 86.48%);
+  .socialMedia {
+    display: flex;
+    margin-right: 42px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fdf627;
+      img {
+        height: 40px;
+        margin-right: 12px;
+        margin-left: 12px;
+      }
+    }
+  }
 }
 .heroe h1 {
   font-size: 78px;
