@@ -124,6 +124,7 @@ a {
   align-items: center;
   width: 100%;
   font-family: Roboto;
+  background-color: #1a1a1a;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
