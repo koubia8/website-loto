@@ -1,11 +1,8 @@
 <template>
   <div class="login">
-    <input
-      type="email"
-      name=""
-      v-model="login.email"
-      placeholder="Username"
-    />
+
+    <input type="email" v-model="login.email" placeholder="Username" />
+
     <input
       type="password"
       name=""
