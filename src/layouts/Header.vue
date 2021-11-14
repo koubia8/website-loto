@@ -143,24 +143,33 @@ export default {
   border-top: 3px solid #00ff00;
   margin: 0;
 }
-.nav nav a {
-  font-family: Roboto;
-  text-align: center;
-  font-weight: 400;
-  height: 53px;
-  font-size: 14px;
-  margin: 0;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 3px 22px;
-  transition: all 0.5s ease-in-out 0s;
-  border-left: 1px dashed rgba(242, 246, 255, 0.65);
+.nav {
+  nav {
+    display: flex;
+    padding: 0;
+    a {
+      display: flex;
+      align-items: center;
+      font-family: Roboto;
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      margin: 0;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0px 22px;
+      transition: all 0.5s ease-in-out 0s;
+      border-left: 1px dashed rgba(242, 246, 255, 0.65);
+    }
+  }
 }
 .active--exact {
   color: #000000 !important;
   height: 100%;
   background-color: #00ff00;
   transition: all;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .nav ul:last-child {
   margin-right: 12px;
